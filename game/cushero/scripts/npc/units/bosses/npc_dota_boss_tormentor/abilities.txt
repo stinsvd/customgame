@@ -11,7 +11,7 @@
 		"AbilityTextureName"			"miniboss_reflect"
 		"AbilityValues"
 		{
-			"damage_absorb"				"200000"
+			"damage_absorb"				"500000"
 			"regen_per_second"			"1500"
 			"reflection"				"150"
 		}

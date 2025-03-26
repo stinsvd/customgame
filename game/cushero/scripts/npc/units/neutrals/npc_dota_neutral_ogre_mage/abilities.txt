@@ -1,0 +1,28 @@
+"DOTAAbilities"
+{
+	"ogre_magi_frost_armor_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/ogre_mage"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.56"
+		"AbilityCooldown"				"5.0"
+		"AbilityManaCost"				"40"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"ogre_magi_frost_armor"
+		"HotKeyOverride"				"F"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityValues"
+		{
+			"armor_bonus"				"5"
+			"duration"					"45.0"
+			"movespeed_slow"			"-25"
+			"attackspeed_slow"			"-25"
+			"slow_duration"				"5.0"
+		}
+	}
+}

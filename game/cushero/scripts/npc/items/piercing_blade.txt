@@ -1,0 +1,37 @@
+"DOTAAbilities"
+{
+	"item_recipe_piercing_blade_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"350"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_piercing_blade_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_war_axe_lua;item_relic;item_javelin"
+		}
+	}
+	"item_piercing_blade_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/piercing_blade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"war axe; piercing blade; pure"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_piercing_blade"
+		"AbilityValues"
+		{
+			"bonus_damage"				"165"
+			"bonus_intellect"			"25"
+			"bonus_attack_speed"		"65"
+			"bonus_mana_regen"			"4.5"
+			"pierce_chance"				"45"
+			"pierce_damage"				"180"
+		}
+	}
+}

@@ -1,0 +1,34 @@
+"DOTAAbilities"
+{
+	"slarkling_dark_pact_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_slark/slark_dark_pact_start.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/slarkling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"325"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"10"
+		"AbilityTextureName"			"slark_dark_pact"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"delay"						"1.5"
+			"pulse_duration"			"1.0"
+			"radius"					"325"
+			"total_damage"				"160"
+			"total_pulses"				"10"
+			"pulse_interval"			"0.1"
+			"self_damage_pct"			"30"
+		}
+	}
+}

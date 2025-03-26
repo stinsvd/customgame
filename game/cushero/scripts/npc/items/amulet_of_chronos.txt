@@ -1,0 +1,35 @@
+"DOTAAbilities"
+{
+	"item_recipe_amulet_of_chronos_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_amulet_of_chronos_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_branches"
+		}
+	}
+	"item_amulet_of_chronos_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/amulet_of_chronos"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"amulet of chronos;time lapse"
+		"ShouldBeSuggested"				"1"
+		"AbilityCooldown"				"4"
+		"AbilityTextureName"			"item_amulet_of_chronos"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"3"
+			"revert_time"				"1"
+		}
+	}
+}

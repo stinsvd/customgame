@@ -1,0 +1,68 @@
+"DOTAAbilities"
+{
+	"monkey_king_wukongs_command_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/monkey_king"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "HasScepterUpgrade"				"1"
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastRange"				"550"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCooldown"				"100 90 80"
+		"AbilityManaCost"				"100"
+		"AbilityTextureName"			"monkey_king_wukongs_command"
+		"AbilityValues"
+		{
+			"first_radius"
+			{
+				"value"		"300"
+				"affected_by_aoe_increase"	"1"
+			}
+			"second_radius"
+			{
+				"value"		"750"
+				"affected_by_aoe_increase"	"1"
+			}
+			"third_radius"
+			{
+				"value"					"0"
+				"special_bonus_unique_monkey_king_6" "+1100"
+				"affected_by_aoe_increase"	"1"
+			}
+			"num_first_soldiers"		"5"
+			"num_second_soldiers"		"9"
+			"num_third_soldiers"
+			{
+				"value"					"0"
+				"special_bonus_unique_monkey_king_6" "+7"
+			}
+			"move_speed"				"700"
+			"bonus_armor"				"15 20 25"
+			"attack_speed"				"1.1"
+			"duration"
+			{
+				"value"					"13.0"
+				"special_bonus_facet_monkey_king_wukongs_faithful"	"+3.0"
+			}
+			"leadership_radius_buffer"	"30"
+			"outer_attack_buffer"		"0"
+			"scepter_spawn_interval"
+			{
+				"special_bonus_scepter"	"+4"
+			}
+			"scepter_spawn_duration"
+			{
+				"special_bonus_scepter"	"+12"
+			}
+			"leadership_time_buffer"
+			{
+				"value"								"0"
+				"special_bonus_facet_monkey_king_wukongs_faithful"	"+3.0"
+			}
+		}
+	}
+}

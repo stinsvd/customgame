@@ -1,0 +1,23 @@
+"DOTAAbilities"
+{
+	"item_icarus_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/icarus"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"icarus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"ItemCost"						"7500"
+		"AbilityTextureName"			"item_icarus"
+		"AbilityValues"
+		{
+			"bonus_damage"				"160"
+			"crit_chance"				"30"
+			"crit_multiplier"			"280"
+		}
+	}
+}

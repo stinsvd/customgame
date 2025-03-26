@@ -1,0 +1,69 @@
+"DOTAAbilities"
+{
+	"item_recipe_sacred_butterfly_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sacred_butterfly_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_butterfly;item_butterfly"
+		}
+	}
+	"item_sacred_butterfly_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/sacred_butterfly"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"agi;damage;evasion;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sacred bfly;sacred butterfly"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_sacred_butterfly"
+		"AbilityValues"
+		{
+			"bonus_agility"				"70"
+			"bonus_evasion"				"45"
+			"bonus_attack_speed_pct"	"45"
+			"bonus_damage"				"50"
+		}
+	}
+	"item_recipe_burning_butterfly_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"2000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_burning_butterfly_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_sacred_butterfly_lua;item_sacred_butterfly_lua;item_angels_blood_lua"
+		}
+	}
+	"item_burning_butterfly_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/sacred_butterfly"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"agi;damage;evasion;attack_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sacred bfly;sacred butterfly"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_burning_butterfly"
+		"AbilityValues"
+		{
+			"bonus_agility"				"150"
+			"bonus_evasion"				"65"
+			"bonus_attack_speed_pct"	"100"
+			"bonus_damage"				"150"
+			"backtrack_chance"			"10"
+			"health_regen"				"25"
+		}
+	}
+}

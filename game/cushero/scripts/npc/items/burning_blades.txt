@@ -1,0 +1,42 @@
+"DOTAAbilities"
+{
+	"item_recipe_burning_blades_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_burning_blades_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_angels_desolator_lua;item_angels_desolator_lua;item_damned_swords_lua;item_angels_blood_lua"
+		}
+	}
+	"item_burning_blades_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage;unique;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"desolator;desolator of corrosion;corosion;corossion;doc"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_burning_blades"
+		"AbilityValues"
+		{
+			"bonus_damage"				"220"
+			"armor_reduction"			"-24"
+			"duration"					"7.0"
+			"bonus_damage_per_kill"		"4"
+			"bonus_damage_per_assist"	"2"
+			"max_damage"				"100"
+			"bonus_agility"				"85"
+			"bonus_strength"			"85"
+			"bonus_health_regen"		"20"
+		}
+	}
+}

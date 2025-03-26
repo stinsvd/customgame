@@ -1,0 +1,26 @@
+"DOTAAbilities"
+{
+	"faceless_void_time_lock_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/faceless_void"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityTextureName"			"faceless_void_time_lock"
+		"AbilityValues"
+		{
+			"duration"					"0.5"
+			"duration_creep"			"0.5"
+			"chance_pct"				"12 16 20 24"
+			"bonus_damage"
+			{
+				"value"					"12 18 24 30"
+				"special_bonus_unique_faceless_void_3" "+30"
+			}
+			"delay"						"0.4"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+}

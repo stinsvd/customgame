@@ -1,0 +1,125 @@
+"DOTAAbilities"
+{
+	"boss_bounty_huntling_shuriken_toss_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/bounty_huntling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"4"
+		"AbilityManaCost"				"80"
+		"AbilityTextureName"			"bounty_hunter_shuriken_toss"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"bonus_damage"				"800"
+			"speed"						"2500"
+			"bounce_aoe"				"1200"
+			"ministun"					"0.5"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"boss_bounty_huntling_jinada_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinada.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_hand_r.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_hand_l.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/bounty_huntling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"2"
+		"AbilityTextureName"			"bounty_hunter_jinada"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"bonus_damage"				"750"
+			"gold_steal"				"10"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"boss_bounty_huntling_wind_walk_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/bounty_huntling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"65"
+		"AbilityCooldown"				"20"
+		"AbilityTextureName"			"bounty_hunter_wind_walk"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"duration"					"15"
+			"fade_time"					"0.25"
+			"damage_reduction"			"35"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"boss_bounty_huntling_track_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_cast.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_shield.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_trail.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_track_haste.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/bounty_huntling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"4"
+		"AbilityManaCost"				"60"
+		"AbilityTextureName"			"bounty_hunter_track"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"target_crit_multiplier"	"200"
+			"duration"					"30.0"
+			"bonus_move_speed_pct"		"24"
+			"toss_crit_multiplier"		"200"
+		}
+	}
+}

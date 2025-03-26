@@ -1,0 +1,87 @@
+"DOTAAbilities"
+{
+	"item_recipe_mystic_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mystic_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_bottle;item_mystic_staff"
+		}
+	}
+	"item_mystic_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mystic_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"int;armor;health;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mystic amulet"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"13"
+		"AbilityManaCost"				"250"
+		"AbilityTextureName"			"item_mystic_amulet"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"35"
+			"bonus_intellect_per_charge" "2"
+			"active_damage"				"225"
+			"active_damage_pct"			"0.4"
+			"max_active_damage_pct"		"35"
+			"max_charges"				"35"
+		}
+	}
+	"item_recipe_alaron_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"6525"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_alaron_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_amulet_lua;item_heart_of_alaron_lua;item_blessed_essence_lua"
+		}
+	}
+	"item_alaron_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mystic_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"int;armor;health;hard_to_tag;str;agi;regen_health;regen_mana;mana_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mystic amulet;alaron amulet"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"
+		"AbilityCastRange"				"500"
+		"AbilityCooldown"				"6.5"
+		"AbilityManaCost"				"250"
+		"AbilityTextureName"			"item_alaron_amulet"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"70"
+			"bonus_intellect_per_charge" "4.5"
+			"active_damage"				"850"
+			"active_damage_pct"			"0.8"
+			"max_active_damage_pct"		"55"
+			"max_charges"				"100"
+			"bonus_mana"				"850"
+			"bonus_health"				"850"
+			"mana_regen_amplify_pct"	"550"
+			"bonus_all_stats"			"20"
+		}
+	}
+}

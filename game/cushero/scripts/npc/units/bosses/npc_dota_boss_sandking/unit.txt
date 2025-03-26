@@ -1,0 +1,177 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_sandking"
+	{
+		"Model"						"models/heroes/sand_king/sand_king.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_SandKing"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"3.5"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		//"vscripts"					"ai/boss"
+		"Ability1"					"boss_sandking_burrowstrike_lua"
+		"Ability2"					"boss_sandking_sand_storm_lua"
+		"Ability3"					"boss_sandking_caustic_finale_lua"
+		"Ability4"					"boss_ability"
+		"Ability5"					"idle_stone"
+		"Ability6"					"boss_sandking_epicenter_lua"
+		"ArmorPhysical"				"79"
+		"MagicalResistance"			"65"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"2500"
+		"AttackDamageMax"			"2677"
+		"AttackRate"				"0.7"
+		"AttackAnimationPoint"		"0.53"
+		"AttackAcquisitionRange"	"900"
+		"AttackRange"				"200"
+		"RingRadius"				"280"
+		"HealthBarOffset"			"550"
+		"BountyXP"					"8000"
+		"BountyGoldMin"				"4000"
+		"BountyGoldMax"				"5000"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"380"
+		"StatusHealth"				"300000"
+		"StatusHealthRegen"			"360"
+		"StatusMana"				"65536"
+		"StatusManaRegen"			"550"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models/heroes/sand_king/sand_king.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"0"
+					"RoamDistance"		"1200"
+				}
+			}
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "8074"}
+				"Wearable2" {"ItemDef" "7809"}
+				"Wearable3" {"ItemDef" "22302"}
+				"Wearable4" {"ItemDef" "22304"}
+				"Wearable5" {"ItemDef" "22305"}
+			}
+			"EquippedItems"
+			{
+				"BootsOfTravel"
+				{
+					"Item"				"item_travel_boots"
+				}
+				"KayaAndSange"
+				{
+					"Item"				"item_kaya_and_sange"
+				}
+				"Pipe"
+				{
+					"Item"				"item_pipe"
+				}
+				"AssaultCuirass"
+				{
+					"Item"				"item_assault"
+				}
+				"ShivasGuard"
+				{
+					"Item"				"item_shivas_guard"
+				}
+				"Radiance"
+				{
+					"Item"				"item_radiance"
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_sandking_epicenter_lua"
+					"Damage"			"1"
+					"Radius"			"1300"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_sandking_burrowstrike_lua"
+					"Damage"			"1"
+					"Radius"			"1300"
+					"MinimumTargets"	"1"
+				}
+				"Ability3"
+				{
+					"Name"				"boss_sandking_sand_storm_lua"
+					"AOE"				"1"
+					"Damage"			"1"
+					"Radius"			"525"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"75"
+							"item_blessed_essence_lua"		"50"
+							"item_awful_mask_lua"			"50"
+							"item_saint_yasha_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_angels_sword_lua"			"50"
+							"item_blessed_essence_lua"		"75"
+							"item_angels_armor_lua"			"50"
+							"item_cursed_sange_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

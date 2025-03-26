@@ -1,0 +1,8 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_huskar"
+	{
+		"override_hero"	"npc_dota_hero_huskar"
+		"Ability3"		"huskar_berserkers_blood_lua"
+	}
+}

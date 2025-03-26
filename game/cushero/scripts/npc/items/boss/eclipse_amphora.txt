@@ -1,0 +1,23 @@
+"DOTAAbilities"
+{
+	"item_eclipse_amphora_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/eclipse_amphora"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCooldown"				"50"
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"25"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"eclipse amphora"
+		"ItemPurchasable"				"0"
+		"ItemCost"						"7500"
+		"AbilityTextureName"			"item_eclipse_amphora"
+		"AbilityValues"
+		{
+			"duration"					"22"
+		}
+	}
+}

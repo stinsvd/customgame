@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+	"item_recipe_angels_desolator_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_angels_desolator_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator;item_desolator"
+		}
+	}
+	"item_angels_desolator_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage;unique;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"desolator;angels desolator;ad"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_angels_desolator"
+		"AbilityValues"
+		{
+			"bonus_damage"				"110"
+			"armor_reduction"			"-12"
+			"duration"					"7.0"
+			"bonus_damage_per_kill"		"2"
+			"bonus_damage_per_assist"	"1"
+			"max_damage"				"50"
+		}
+	}
+}

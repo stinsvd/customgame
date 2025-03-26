@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_recipe_pavise_cape_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pavise_cape_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_pavise;item_glimmer_cape"
+		}
+	}
+	"item_pavise_cape_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/pavise_cape"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"ItemShopTags"					"armor;regen_mana;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"pavise;glimmer cape;pavise cape"
+		"ShouldBeSuggested"				"1"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"75"
+		"AbilityTextureName"			"item_pavise_cape"
+		"AbilityValues"
+		{
+			"bonus_armor"				"6"
+			"bonus_mana_regen"			"5.5"
+			"bonus_health"				"250"
+			"duration"					"8"
+			"absorb_amount"				"1000"
+			"initial_fade_delay"		"0.2"
+			"secondary_fade_delay"		"0.5"
+			"active_movement_speed"		"50"
+			"bonus_magical_armor"		"30"
+		}
+	}
+}

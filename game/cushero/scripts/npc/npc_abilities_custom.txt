@@ -1,0 +1,170 @@
+#base heroes/techies/abilities.txt
+#base heroes/ogre_magi/abilities.txt
+#base heroes/tinker/abilities.txt
+#base heroes/dark_willow/abilities.txt
+#base heroes/slardar/abilities.txt
+#base heroes/tidehunter/abilities.txt
+#base heroes/meepo/abilities.txt
+#base heroes/monkey_king/abilities.txt
+#base heroes/huskar/abilities.txt
+#base heroes/faceless_void/abilities.txt
+#base heroes/earthshaker/abilities.txt
+#base heroes/obsidian_destroyer/abilities.txt
+#base units/buildings/npc_dota_fountain/abilities.txt
+#base units/buildings/npc_dota_shrine/abilities.txt
+#base units/buildings/npc_dota_portal/abilities.txt
+#base units/buildings/npc_dota_watcher/abilities.txt
+#base units/neutrals/abilities.txt
+#base units/neutrals/npc_dota_neutral_slarkling/abilities.txt
+#base units/neutrals/npc_dota_neutral_doomling/abilities.txt
+#base units/neutrals/npc_dota_neutral_kobold_big/abilities.txt
+#base units/neutrals/npc_dota_neutral_satyr_small/abilities.txt
+#base units/neutrals/npc_dota_neutral_ogre_magi/abilities.txt
+#base units/bosses/abilities.txt
+#base units/bosses/npc_dota_boss_slarkling/abilities.txt
+#base units/bosses/npc_dota_boss_night_stalker/abilities.txt
+#base units/bosses/npc_dota_boss_sandking/abilities.txt
+#base units/bosses/npc_dota_boss_doomling/abilities.txt
+#base units/bosses/npc_dota_boss_bounty_huntling/abilities.txt
+#base units/bosses/npc_dota_boss_nevermore_magic/abilities.txt
+#base units/bosses/npc_dota_boss_nevermore_physic/abilities.txt
+#base units/bosses/npc_dota_boss_tormentor/abilities.txt
+#base units/bosses/npc_dota_boss_lumberjack/abilities.txt
+
+"DOTAAbilities"
+{
+	"cast_unit"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/cast_unit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"150"
+	}
+	"enchantress_enchant"
+	{
+		"AbilityValues"
+		{
+			"level_req"					"5 15 50 100"
+		}
+	}
+	"chen_holy_persuasion"
+	{
+		"AbilityValues"
+		{
+			"level_req"				"5 15 50 100"
+		}
+	}
+	"doom_bringer_devour"
+	{
+		"AbilityValues"
+		{
+			"creep_level"			"5 15 50 100"
+		}
+	}
+	"storm_spirit_ball_lightning"
+	{
+		"AbilityCooldown"				"15 10 5"
+	}
+	"lone_druid_spirit_bear"
+	{
+		"AbilityCooldown"				"95 85 6 55 45"
+	}
+	"phantom_assassin_blur"
+	{
+		"AbilityCooldown"				"70 65 60 55"
+		"AbilityValues"
+		{
+			"duration"					"16"
+			"scepter_cooldown"
+			{
+				"value"					"30"
+				"RequiresScepter"		"1"
+			}
+		}
+	}
+	"filler_ability"
+	{
+		"AbilityCooldown"				"90"
+		"AbilityValues"
+		{
+			"hp_heal"					"40"
+			"mp_heal"					"30"
+			"hp_heal_pct"				"10"
+			"mp_heal_pct"				"10"
+			"duration"					"6"
+			"initial_cooldown"			"30"
+		}
+	}
+	"rattletrap_armor_power"
+	{
+		"AbilityValues"
+		{
+			"damage_per_armor_limit"	"180"
+		}
+	}
+	"death_prophet_witchcraft"
+	{
+		"AbilityValues"
+		{
+			"movement_speed_pct_per_level_limit" "20"
+			"cooldown_reduction_pct_per_level_limit" "60"
+		}
+	}
+	"drow_ranger_trueshot"
+	{
+		"AbilityValues"
+		{
+			"trueshot_agi_bonus_self_limit" "50"
+			"trueshot_agi_bonus_allies_limit" "25"
+		}
+	}
+	"leshrac_defilement"
+	{
+		"AbilityValues"
+		{
+			"aoe_per_int_limit"			"150"
+		}
+	}
+	"lycan_apex_predator"
+	{
+		"AbilityValues"
+		{
+			"damage_amp_per_level_limit" "75"
+		}
+	}
+	"phantom_assassin_immaterial"
+	{
+		"AbilityValues"
+		{
+			"evasion_per_level_limit"	"50"
+		}
+	}
+	"razor_unstable_current"
+	{
+		"AbilityValues"
+		{
+			"movespeed_per_level_pct_limit" "40"
+		}
+	}
+	"razor_dynamo"
+	{
+		"AbilityValues"
+		{
+			"spell_amp_mult_limit"		"80"
+		}
+	}
+	"rubick_might_and_magus"
+	{
+		"AbilityValues"
+		{
+			"bonus_damage_pct_limit"	"5000"
+			"bonus_damage_pct_tooltip_limit" "50"
+			"magic_resist_pct_limit"	"2500"
+			"magic_resist_pct_tooltip_limit" "25"
+		}
+	}
+}

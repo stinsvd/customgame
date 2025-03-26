@@ -1,0 +1,62 @@
+"DOTAAbilities"
+{
+	"ogre_magi_multicast_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/ogre_magi"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"ogre_magi_multicast"
+		"AbilityValues"
+		{
+			"multicast_delay"			"0.6"
+			"multicast_buffer_range"	"600"
+			"multicast_2_times"
+			{
+				"value"		"75"
+				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+			}
+			"multicast_3_times"
+			{
+				"value"		"0 30 30"
+				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+			}
+			"multicast_4_times"
+			{
+				"value"		"0 0 15"
+				"special_bonus_facet_ogre_magi_fat_chance" "+0"
+			}
+			"strength_mult"
+			{
+				"value"						"0"
+				"special_bonus_facet_ogre_magi_fat_chance"	"=0.06"
+			}
+			"required_level"
+			{
+				"value"						"6"
+				"special_bonus_facet_ogre_magi_learning_curve"	"-1"
+			}
+		}
+	}
+	"ogre_magi_dumb_luck_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/ogre_magi"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"ogre_magi_dumb_luck"
+		"AbilityValues"
+		{
+			"mana_per_str"
+			{
+				"value"					"6"
+				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+2"
+			}
+			"mana_regen_per_str"
+			{
+				"value"			"0.02"
+				"special_bonus_unique_ogre_magi_dumb_luck_mana"			"+0.01"
+			}
+		}
+	}
+}

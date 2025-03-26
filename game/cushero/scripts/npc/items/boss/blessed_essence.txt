@@ -1,0 +1,22 @@
+"DOTAAbilities"
+{
+	"item_blessed_essence_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/blessed_essence"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"int;agi;str;health"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blessed essence"
+		"ItemCost"						"5000"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_blessed_essence"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"12"
+			"bonus_health"				"400"
+		}
+	}
+}

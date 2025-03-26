@@ -1,0 +1,117 @@
+"DOTAAbilities"
+{
+	"boss_sandking_burrowstrike_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_sandking/sandking_burrowstrike.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/sandking"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"140"
+		"AbilityDamage"					"380"
+		"AbilityTextureName"			"sandking_burrowstrike"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"burrow_width"				"150"
+			"burrow_duration"			"3.2"
+			"burrow_speed"				"3000"
+			"burrow_anim_time"			"0.52"
+		}
+	}
+	"boss_sandking_sand_storm_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/sandking"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"0"
+		"AbilityDuration"				"15"
+		"AbilityCooldown"				"10"
+		"AbilityCastPoint"				"0"
+		"AbilityManaCost"				"85"
+		"AbilityTextureName"			"sandking_sand_storm"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"damage_tick_rate"			"0.2"
+			"sand_storm_radius"			"900"
+			"sand_storm_damage"			"125"
+			"fade_delay"				"0.7"
+		}
+	}
+	"boss_sandking_caustic_finale_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/sandking"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"sandking_caustic_finale"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"caustic_finale_radius"		"200"
+			"caustic_finale_damage_base""100"
+			"caustic_finale_damage_pct"	"1"
+			"caustic_finale_stun_duration""0.05"
+			"caustic_finale_delay"		"1"
+		}
+	}
+	"boss_sandking_epicenter_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+			"particle"		"particles/units/heroes/hero_sandking/sandking_epicenter_ring.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/sandking"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCooldown"				"30"
+		"AbilityDuration"				"4.5"
+		"AbilityCastPoint"				"2.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		"AbilityManaCost"				"300"
+		"AbilityTextureName"			"sandking_epicenter"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"epicenter_radius"			"500 525 550 575 600 625 650 675 700 725 750 775 800 825"
+			"epicenter_pulses"			"15"
+			"epicenter_damage"			"450"
+			"epicenter_slow"			"-30"
+			"epicenter_slow_as"			"-30"
+		}
+	}
+}

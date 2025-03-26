@@ -1,0 +1,51 @@
+"DOTAAbilities"
+{
+	"item_recipe_void_blink_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"950"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_void_blink_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_blink;item_ring_of_the_void_lua"
+		}
+	}
+	"item_void_blink_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/void_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastRange"				"1200"
+		"AbilityOvershootCastRange"     "960"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"blink"
+		"ItemShopTags"					"teleport"
+		"ItemQuality"					"component"
+		"ItemAliases"					"blink dagger"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_void_blink"
+		"AbilityValues"
+		{
+			"blink_range"				"1200"
+			"blink_damage_cooldown"		"3.0"
+			"blink_range_clamp"			"960"
+			"damage_pct"				"10"
+			"duration" 					"6"
+			"max_stacks"				"20"
+			"pull_damage"				"125"
+			"pull_duration"				"0.5"
+			"pull_radius"				"450"
+			"pull_radius_tree"			"150"
+		}
+	}
+}

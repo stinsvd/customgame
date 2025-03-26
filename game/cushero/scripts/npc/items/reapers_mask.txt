@@ -1,0 +1,42 @@
+"DOTAAbilities"
+{
+	"item_recipe_reapers_mask_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_reapers_mask_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_vladmir;item_awful_mask_lua"
+		}
+	}
+	"item_reapers_mask_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/reapers_mask"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"ItemShopTags"					"damage;armor;regen_mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"reapers mask"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_reapers_mask"
+		"AbilityValues"
+		{
+			"armor_aura"				"5"
+			"mana_regen_aura"			"2"
+			"lifesteal_aura"			"25"
+			"creep_lifesteal_reduction_pct"	"40"
+			"damage_aura"				"30"
+			"aura_radius"				"1200"
+			"bonus_strength"			"25"
+			"bonus_health"				"200"
+			"bonus_damage"				"40"
+		}
+	}
+}

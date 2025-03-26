@@ -1,0 +1,48 @@
+"DOTAAbilities"
+{
+	"item_recipe_spiked_armor_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spiked_armor_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_blade_mail;item_amaliels_cuirass_lua;item_angels_armor_lua"
+		}
+	}
+	"item_spiked_armor_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/spiked_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityCooldown"				"25.0"
+		"AbilityManaCost"				"25"
+		"ItemShopTags"					"damage;attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sa;spiked armor"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySharedCooldown"			"blade_mail"
+		"AbilityTextureName"			"item_spiked_armor"
+		"AbilityValues"
+		{
+			"bonus_damage"				"35"
+			"bonus_armor"				"45"
+			"duration"					"5.5"
+			"passive_reflection_constant" "80"
+			"passive_reflection_pct"	"20"
+			"active_reflection_pct"		"100"
+			"bonus_attack_speed"		"90"
+			"aura_radius"				"1200"
+			"aura_attack_speed"			"90"
+			"aura_positive_armor"		"22"
+			"aura_negative_armor"		"-22"
+			"bonus_health"				"800"
+			"bonus_all_stats"			"25"
+		}
+	}
+}

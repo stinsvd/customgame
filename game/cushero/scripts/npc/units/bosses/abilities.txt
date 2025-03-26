@@ -1,0 +1,36 @@
+"DOTAAbilities"
+{
+	"boss_ability"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/boss"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"necronomicon_warrior_sight"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"true_sight_radius"			"1200"
+			"pure_resistance"			"50"
+		}
+	}
+	"idle_stone"
+	{
+		"precache"
+		{
+			"particle"					"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/boss"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"earth_spirit_petrify"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"fade_delay"				"5"
+			"health_regen_pct"			"5"
+			"destroy_damage"			"200"
+			"destroy_damage_reset"		"5"
+		}
+	}
+}

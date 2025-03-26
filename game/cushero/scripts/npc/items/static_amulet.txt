@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+	"item_recipe_static_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"2735"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_static_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_slice_of_static_lua;item_slice_of_static_lua;item_slice_of_static_lua"
+		}
+	}
+	"item_static_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/slice_of_static"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"damage;int;agi;str;armor"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"static amulet"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_static_amulet"
+		"ItemBaseLevel"					"2"
+		"AbilityCooldown"				"14"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"85"
+			"bonus_armor"				"28"
+			"bonus_all_stats"			"20"
+			"bonus_mana_regen"			"20"
+			"bonus_max_mana_percentage"	"25"
+			"damage_pct"				"22"
+			"damage_radius"				"1800"
+			"mana_cost_pct"				"18"
+			"active_duration"			"5.5"
+			"spell_amp_per_int"			"0.2"
+		}
+	}
+}

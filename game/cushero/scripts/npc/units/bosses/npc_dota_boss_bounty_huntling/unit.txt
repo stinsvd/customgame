@@ -1,0 +1,178 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_bounty_huntling"
+	{
+		"Model"						"models/heroes/bounty_hunter/bounty_hunter.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_BountyHunter"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"2.1"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		//"vscripts"					"ai/boss"
+		"Ability1"					"boss_bounty_huntling_shuriken_toss_lua"
+		"Ability2"					"boss_bounty_huntling_jinada_lua"
+		"Ability3"					"boss_bounty_huntling_wind_walk_lua"
+		"Ability4"					"boss_ability"
+		"Ability5"					"idle_stone"
+		"Ability6"					"boss_bounty_huntling_track_lua"
+		"ArmorPhysical"				"140"
+		"MagicalResistance"			"75"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"3060"
+		"AttackDamageMax"			"4100"
+		"AttackRate"				"0.4"
+		"AttackAnimationPoint"		"0.59"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"200"
+		"RingRadius"				"140"
+		"HealthBarOffset"			"310"
+		"BountyXP"					"6800"
+		"BountyGoldMin"				"6000"
+		"BountyGoldMax"				"19000"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"500"
+		"StatusHealth"				"512000"
+		"StatusHealthRegen"			"1000"
+		"StatusMana"				"16000"
+		"StatusManaRegen"			"321"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models/heroes/bounty_hunter/bounty_hunter.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"25"
+					"RoamDistance"		"1200"
+				}
+			}
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "13081"}
+				"Wearable2" {"ItemDef" "7934"}
+				"Wearable3" {"ItemDef" "6525"}
+				"Wearable4" {"ItemDef" "6529"}
+				"Wearable5" {"ItemDef" "6528"}
+				"Wearable6" {"ItemDef" "6537"}
+				"Wearable7" {"ItemDef" "4178"}
+			}
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"Daedalus"
+				{
+					"Item"				"item_greater_crit"
+				}
+				"AssaultCuirass"
+				{
+					"Item"				"item_assault"
+				}
+				"Skadi"
+				{
+					"Item"				"item_skadi"
+				}
+				"AbyssalBlade"
+				{
+					"Item"				"item_abyssal_blade"
+				}
+				"Butterfly"
+				{
+					"Item"				"item_butterfly"
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_bounty_huntling_wind_walk_lua"
+					"AOE"				"1"
+					"Buff"				"1"
+					"Radius"			"900"
+					"MinimumTargets"	"1"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_bounty_huntling_track_lua"
+					"Radius"			"1200"
+					"Debuff"			"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability3"
+				{
+					"Name"				"boss_bounty_huntling_shuriken_toss_lua"
+					"Damage"			"1"
+					"Radius"			"700"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"75"
+							"item_blessed_essence_lua"		"50"
+							"item_awful_mask_lua"			"50"
+							"item_saint_yasha_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_angels_sword_lua"			"50"
+							"item_demons_claw_lua"			"75"
+							"item_angels_armor_lua"			"50"
+							"item_cursed_sange_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

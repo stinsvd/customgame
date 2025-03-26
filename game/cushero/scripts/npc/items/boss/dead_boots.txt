@@ -1,0 +1,24 @@
+"DOTAAbilities"
+{
+	"item_dead_boots_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/dead_boots"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"movespeed;armor;hp regen;int;agi;str"
+		"ItemQuality"					"component"
+		"ItemAliases"					"dead boots"
+		"ItemCost"						"10000"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_dead_boots"
+		"AbilityValues"
+		{
+			"bonus_movement_speed"		"60"
+			"bonus_armor"				"6"
+			"bonus_health_regen"		"20"
+			"bonus_all_stats"			"16"
+		}
+	}
+}

@@ -1,0 +1,176 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_night_stalker"
+	{
+		"Model"						"models/heroes/nightstalker/nightstalker.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_NightStalker"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"1.9"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		//"vscripts"					"ai/boss"
+		"Ability1"					"boss_night_stalker_void_lua"
+		"Ability2"					"boss_night_stalker_crippling_fear_lua"
+		"Ability3"					"boss_night_stalker_hunter_in_the_night_lua"
+		"Ability4"					"boss_ability"
+		"Ability5"					"idle_stone"
+		"Ability6"					"boss_night_stalker_darkness_lua"
+		"ArmorPhysical"				"68"
+		"MagicalResistance"			"60"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"555"
+		"AttackDamageMax"			"999"
+		"AttackRate"				"0.7"
+		"AttackAnimationPoint"		"0.55"
+		"AttackAcquisitionRange"	"900"
+		"AttackRange"				"200"
+		"RingRadius"				"140"
+		"HealthBarOffset"			"350"
+		"BountyXP"					"2800"
+		"BountyGoldMin"				"1000"
+		"BountyGoldMax"				"4500"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"380"
+		"StatusHealth"				"160000"
+		"StatusHealthRegen"			"190"
+		"StatusMana"				"6000"
+		"StatusManaRegen"			"120"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models\heroes\nightstalker\nightstalker.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"0"
+					"RoamDistance"		"1200"
+				}
+			}
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "5086"}
+				"Wearable2" {"ItemDef" "13776"}
+				"Wearable3" {"ItemDef" "12282"}
+				"Wearable4" {"ItemDef" "12287"}
+				"Wearable5" {"ItemDef" "12288"}
+			}
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"Daedalus"
+				{
+					"Item"				"item_greater_crit"
+				}
+				"AssaultCuirass"
+				{
+					"Item"				"item_assault"
+				}
+				"Skadi"
+				{
+					"Item"				"item_skadi"
+				}
+				"AbyssalBlade"
+				{
+					"Item"				"item_abyssal_blade"
+				}
+				"Radiance"
+				{
+					"Item"				"item_radiance"
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_night_stalker_darkness_lua"
+					"Radius"			"900"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_night_stalker_crippling_fear_lua"
+					"AOE"				"1"
+					"Radius"			"450"
+					"MinimumTargets"	"1"
+				}
+				"Ability3"
+				{
+					"Name"				"boss_night_stalker_void_lua"
+					"AOE"				"1"
+					"Damage"			"1"
+					"Radius"			"525"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"50"
+							"item_blessed_essence_lua"		"75"
+							"item_dead_boots_lua"			"75"
+							"item_saint_yasha_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_angels_sword_lua"			"50"
+							"item_blessed_essence_lua"		"75"
+							"item_dead_boots_lua"			"75"
+							"item_cursed_sange_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

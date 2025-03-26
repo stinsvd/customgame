@@ -1,0 +1,41 @@
+"DOTAAbilities"
+{
+	"item_recipe_falcon_boots_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"50"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_falcon_boots_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_phase_boots;item_falcon_blade;item_broadsword"
+		}
+	}
+	"item_falcon_boots_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/falcon_boots"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"AbilityCooldown"				"8.0"
+		"ItemShopTags"					"damage;move_speed;hard_to_tag"
+		"ItemQuality"					"common"
+		"ItemAliases"					"phase boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_falcon_boots"
+		"AbilityValues"
+		{
+			"bonus_movement_speed"		"50"
+			"bonus_damage"				"65"
+			"bonus_health"				"350"
+			"bonus_mp_regen"			"2.8"
+			"bonus_armor"				"8"
+			"phase_movement_speed"	  	"20"
+			"phase_duration"			"3.5"
+		}
+	}
+}

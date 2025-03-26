@@ -1,0 +1,40 @@
+"DOTAAbilities"
+{
+	"item_recipe_third_eye_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"4100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_third_eye_lua"
+		"AbilityTextureName"			"item_recipe_third_eye"
+		"ItemRequirements"
+		{
+			"01"						"item_gem;"
+		}
+	}
+	"item_third_eye_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/third_eye"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"consumable;see_invis"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"gem of true sight;third eye"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"AbilityTextureName"			"item_third_eye"
+		"AbilityValues"
+		{
+			"radius"					"900"
+			"duration"					"90"
+			"max_stacks"				"3"
+		}
+	}
+}

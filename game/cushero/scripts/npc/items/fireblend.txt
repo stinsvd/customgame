@@ -1,0 +1,46 @@
+"DOTAAbilities"
+{
+	"item_recipe_fireblend_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"75"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fireblend_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_blitz_knuckles;item_gloves;item_quelling_blade"
+		}
+	}
+	"item_fireblend_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/fireblend"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"ItemShopTags"					"damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"fireblend;quell"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_fireblend"
+		"AbilityCooldown"				"2"
+		"AbilityCastRange"				"150"
+		"AbilitySharedCooldown"			"fireblend"
+		"AbilityValues"
+		{
+			"damage_bonus"				"10"
+			"damage_bonus_ranged"		"5"
+			"bonus_attack_speed"		"55"
+			"bonus_damage"				"15"
+			"chop_radius"				"150"
+			"explosion_chance"			"40"
+			"explosion_radius"			"200"
+			"explosion_damage"			"135"
+		}
+	}
+}

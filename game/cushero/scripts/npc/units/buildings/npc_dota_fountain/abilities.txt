@@ -1,0 +1,17 @@
+"DOTAAbilities"
+{
+	"fountain_attack_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/fountain"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityValues"
+		{
+			"bash_chance"				"50"
+			"bash_duration"				"0.3"
+			"damage_pct"				"5.0"
+		}
+	}
+}

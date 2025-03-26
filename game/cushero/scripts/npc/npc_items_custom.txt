@@ -1,0 +1,185 @@
+#base items/boss/angels_blood.txt
+#base items/boss/angels_sword.txt
+#base items/boss/angels_armor.txt
+#base items/boss/blessed_essence.txt
+#base items/boss/dead_boots.txt
+#base items/boss/awful_mask.txt
+#base items/boss/eclipse_amphora.txt
+#base items/boss/ring_of_the_void.txt
+#base items/boss/icarus.txt
+#base items/boss/saint_yasha.txt
+#base items/boss/cursed_sange.txt
+#base items/boss/demons_claw.txt
+#base items/neutral/mechanical_arm.txt
+#base items/spellshop_sell.txt
+#base items/might_treads.txt
+#base items/falcon_boots.txt
+#base items/leaf_buckler.txt
+#base items/heart_of_alaron.txt
+#base items/refresher_core.txt
+#base items/war_axe.txt
+#base items/piercing_blade.txt
+#base items/aeon_greaves.txt
+#base items/monkey_king_bar.txt
+#base items/slice_of_static.txt
+#base items/static_amulet.txt
+#base items/charons_scepter.txt
+// #base items/fireblend.txt
+#base items/polar_spear.txt
+#base items/amulet_of_chronos.txt
+#base items/void_blink.txt
+#base items/helm_of_the_dominator.txt
+#base items/helm_of_the_overlord.txt
+#base items/shiva_armageddon.txt
+#base items/power_treads.txt
+#base items/azrael_crossbow.txt
+#base items/icarus_daedalus.txt
+#base items/amaliels_cuirass.txt
+#base items/reapers_mask.txt
+#base items/sacred_butterfly.txt
+#base items/eye_of_skadi.txt
+#base items/plague_staff.txt
+#base items/strength_amulet.txt
+#base items/power_amulet.txt
+#base items/mystic_amulet.txt
+// #base items/blaze_lance.txt
+#base items/damned_swords.txt
+#base items/angels_desolator.txt
+#base items/burning_blades.txt
+#base items/bfury.txt
+#base items/demons_fury.txt
+// #base items/demons_lance.txt
+#base items/pavise_cape.txt
+#base items/mantlet.txt
+#base items/angels_locket.txt
+#base items/tome_of_hero.txt
+#base items/medical_tractate.txt
+#base items/tome_of_stats.txt
+#base items/third_eye.txt
+#base items/helm_of_tyranth.txt
+#base items/mask_of_rage.txt
+#base items/demons_reaper.txt
+#base items/spiked_armor.txt
+
+"DOTAAbilities"
+{
+	"item_bracer"
+	{
+		"ItemLevelByGameTime"			"10"
+		"AbilityValues"
+		{
+			"clock_time"				"10"
+		}
+	}
+	"item_wraith_band"
+	{
+		"ItemLevelByGameTime"			"10"
+		"AbilityValues"
+		{
+			"clock_time"				"10"
+		}
+	}
+	"item_null_talisman"
+	{
+		"ItemLevelByGameTime"			"10"
+		"AbilityValues"
+		{
+			"clock_time"				"10"
+		}
+	}
+	"item_refresher"
+	{
+		"AbilitySharedCooldown"			"refresher"
+	}
+	"item_blade_mail"
+	{
+		"AbilitySharedCooldown"			"blade_mail"
+	}
+	"item_gem"
+	{
+		"ItemStockTime"					"30"
+		"ItemStockMax"					"5"
+	}
+	"item_aghanims_shard"
+	{
+		"ItemInitialStockTime"			"390"
+		"ItemInitialStockTimeTurbo"		"240"
+	}
+	"item_ward_observer"
+	{
+		"ItemCost"						"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"10"
+		"ItemStockInitial"				"5"
+		"ItemStockTime"					"90"
+		"AbilityValues"
+		{
+			"lifetime"					"360"
+			"duration_minutes_tooltip"	"6"
+		}
+	}
+	"item_ward_sentry"
+	{
+		"ItemCost"						"50"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"50"
+		"ItemStockInitial"				"10"
+		"ItemStockTime"					"60"
+		"AbilityValues"
+		{
+			"lifetime"					"420"
+			"duration_minutes_tooltip"	"7"
+		}
+	}
+	"item_ward_dispenser"
+	{
+		"ItemCost"						"50"
+		"AbilityValues"
+		{
+			"lifetime_observer"			"60"
+			"lifetime_sentry"			"420"
+			"observer_duration_minutes_tooltip"	"6"
+			"sentry_duration_minutes_tooltip"	"7"
+		}
+	}
+	"item_assassins_dagger"
+	{
+		"AbilityTextureName"			"override/assassins_dagger"
+	}
+	"item_light_robes"
+	{
+		"AbilityTextureName"			"override/light_robes"
+	}
+	"item_sample_picker"
+	{
+		"AbilityTextureName"			"override/assassins_contract"
+	}
+	"item_gladiator_helm"
+	{
+		"AbilityTextureName"			"override/helm_of_the_gladiators"
+	}
+	"item_fortitude_ring"
+	{
+		"AbilityTextureName"			"override/ring_of_fortitude"
+	}
+	"item_icarus_wings"
+	{
+		"AbilityTextureName"			"override/icarus_wings"
+	}
+	"item_warhammer"
+	{
+		"AbilityTextureName"			"override/warhammer"
+	}
+	"item_wizard_glass"
+	{
+		"AbilityTextureName"			"override/wizard_glass"
+	}
+	"item_star_mace"
+	{
+		"AbilityTextureName"			"override/star_mace"
+	}
+	"item_blighted_spirit"
+	{
+		"AbilityTextureName"			"override/blighted_spirit"
+	}
+}

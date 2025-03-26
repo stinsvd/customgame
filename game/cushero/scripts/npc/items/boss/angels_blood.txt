@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+	"item_angels_blood_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/angels_blood"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"hp regen"
+		"ItemQuality"					"component"
+		"ItemAliases"					"angels blood"
+		"ItemCost"						"7500"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_angels_blood"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"20"
+		}
+	}
+}

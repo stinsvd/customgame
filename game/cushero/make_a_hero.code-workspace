@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../content/dota_addons/make_a_hero"
+		},
+		{
+			"path": "../customs/pak01_dir/scripts/npc/heroes"
+		}
+	],
+	"settings": {}
+}

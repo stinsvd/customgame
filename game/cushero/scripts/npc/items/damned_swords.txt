@@ -1,0 +1,35 @@
+"DOTAAbilities"
+{
+	"item_recipe_damned_swords_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_damned_swords_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_saint_yasha_lua;item_cursed_sange_lua"
+		}
+	}
+	"item_damned_swords_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/damned_swords"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"agi;attack_speed;move_speed;damage;str;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"damned swords"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_damned_swords"
+		"AbilityValues"
+		{
+			"bonus_agility"				"70"
+			"bonus_strength"			"70"
+		}
+	}
+}

@@ -1,0 +1,91 @@
+"DOTAAbilities"
+{
+	"item_recipe_power_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"600"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_bottle;item_demon_edge"
+		}
+	}
+	"item_power_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/power_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"power amulet"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"
+		"AbilityCastRange"				"400"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"0"
+		"AbilityTextureName"			"item_power_amulet"
+		"AbilityValues"
+		{
+			"bonus_damage"				"50"
+			"bonus_damage_per_charge"	"10"
+			"armor_reduction_per_charge" "0.5"
+			"armor_reduction_duration"	"4"
+			"stun_per_charge"			"0.05"
+			"max_stun"					"1"
+			"heal"						"250"
+			"heal_per_charge"			"20"
+			"max_charges"				"35"
+		}
+	}
+	"item_recipe_might_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"4025"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_might_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_power_amulet_lua;item_angels_desolator_lua;item_angels_blood_lua"
+		}
+	}
+	"item_might_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/power_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"damage;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"power amulet;might amulet"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"
+		"AbilityCastRange"				"400"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0"
+		"AbilityTextureName"			"item_might_amulet"
+		"AbilityValues"
+		{
+			"bonus_damage"				"200"
+			"bonus_damage_per_charge"	"30"
+			"armor_reduction"			"-15"
+			"armor_reduction_per_charge" "1"
+			"armor_reduction_duration"	"6"
+			"stun_per_charge"			"0.1"
+			"max_stun"					"3"
+			"heal"						"450"
+			"heal_per_charge"			"80"
+			"max_charges"				"100"
+			"bonus_health_regen"		"25"
+		}
+	}
+}

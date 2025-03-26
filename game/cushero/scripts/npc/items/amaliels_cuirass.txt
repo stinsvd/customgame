@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+	"item_recipe_amaliels_cuirass_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"2500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_amaliels_cuirass_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_assault"
+		}
+	}
+	"item_amaliels_cuirass_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/amaliels_cuirass"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;amaliels cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_amaliels_cuirass"
+		"AbilityValues"
+		{
+			"bonus_attack_speed"		"30"
+			"bonus_armor"				"10"
+			"aura_radius"				"1200"
+			"aura_attack_speed"			"60"
+			"aura_positive_armor"		"12"
+			"aura_negative_armor"		"-12"
+		}
+	}
+}

@@ -1,0 +1,123 @@
+"DOTAAbilities"
+{
+	"boss_nevermore_physic_shadowraze_1_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/nevermore"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.55"
+		"AbilityManaCost"				"90"
+		"AbilityCooldown"				"9"
+		"AbilityTextureName"			"nevermore_shadowraze1"
+		"AbilityValues"
+		{
+			"shadowraze_damage"			"240"
+			"shadowraze_radius"			"350"
+			"shadowraze_range"			"300"
+			"perform_attack"			"1"
+		}
+	}
+	"boss_nevermore_physic_shadowraze_2_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/nevermore"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.55"
+		"AbilityManaCost"				"90"
+		"AbilityCooldown"				"9"
+		"AbilityTextureName"			"nevermore_shadowraze2"
+		"AbilityValues"
+		{
+			"shadowraze_damage"			"240"
+			"shadowraze_radius"			"350"
+			"shadowraze_range"			"600"
+			"perform_attack"			"1"
+		}
+	}
+	"boss_nevermore_physic_shadowraze_3_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/nevermore"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_2"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.55"
+		"AbilityManaCost"				"90"
+		"AbilityCooldown"				"9"
+		"AbilityTextureName"			"nevermore_shadowraze3"
+		"AbilityValues"
+		{
+			"shadowraze_damage"			"240"
+			"shadowraze_radius"			"350"
+			"shadowraze_range"			"900"
+			"perform_attack"			"1"
+		}
+	}
+	"boss_nevermore_physic_necromastery_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/nevermore"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityTextureName"			"nevermore_necromastery"
+		"AbilityCooldown"				"3"
+		"AbilityValues"
+		{
+			"necromastery_damage_per_soul" "4"
+			"necromastery_max_souls"	"46"
+			"crit_pct"					"500"
+			"fear_duration"				"1"
+		}
+	}
+	"boss_nevermore_physic_dark_lord_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/nevermore"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"nevermore_dark_lord"
+		"AbilityValues"
+		{
+			"presence_armor_reduction"	"-15"
+			"presence_radius"			"1200"
+		}
+	}
+	"boss_nevermore_physic_requiem_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/nevermore"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCastPoint"				"1.67"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityDamage"					"100"
+		"AbilityManaCost"				"200"
+		"AbilityCooldown"				"40"
+		"AbilityTextureName"			"nevermore_requiem"
+		"AbilityValues"
+		{
+			"requiem_radius"			"1200"
+			"requiem_soul_conversion"	"1"
+			"requiem_line_width_start"	"125"
+			"requiem_line_width_end"	"350"
+			"requiem_line_speed"		"700"
+			"soul_death_release"		"0.5"
+		}
+	}
+}

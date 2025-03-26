@@ -1,0 +1,66 @@
+.DuelHudRoot {
+	height: 100%;
+	width: 100%;
+}
+
+#DuelHudPanel {
+	width: 350px;
+	height: 95px;
+	background-image: url("file://{resources}/images/custom_game/duel/time_bg.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: 9% 1% 0%;
+	opacity: 0.3;
+	animation-name: DuelHUDHide;
+	animation-duration: 0.1s;
+	animation-fill-mode: forwards;
+}
+
+#DuelHudPanel:hover, #DuelHudPanel.visible {
+	animation-name: DuelHUDShow;
+}
+
+@keyframes 'DuelHUDShow' {
+	0% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes 'DuelHUDHide' {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.3;
+	}
+}
+
+Label {
+	font-size: 16px;
+	text-align: center;
+	horizontal-align: center;
+	color: white;
+	vertical-align: center;
+}
+
+Label.red {
+	color: red;
+}
+
+.DuelPanel {
+	height: 40px;
+	flow-children: down;
+}
+
+#DuelPanelLeft {
+	width: 155px;
+	position: 20px 25px 0px;
+}
+
+#DuelPanelRight {
+	width: 145px;
+	position: 175px 25px 0px;
+}

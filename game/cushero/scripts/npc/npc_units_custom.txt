@@ -1,0 +1,62 @@
+#base heroes/techies/units.txt
+#base units/buildings/npc_dota_fountain/unit.txt
+#base units/buildings/npc_dota_shrine/unit.txt
+#base units/buildings/npc_dota_portal/unit.txt
+#base units/buildings/npc_dota_watcher/unit.txt
+#base units/neutrals/npc_dota_neutral_slarkling/unit.txt
+#base units/neutrals/npc_dota_neutral_doomling/unit.txt
+#base units/neutrals/npc_dota_neutral_hellbear_small/unit.txt
+#base units/neutrals/npc_dota_neutral_wildkin_big/unit.txt
+#base units/neutrals/npc_dota_neutral_kobold_small/unit.txt
+#base units/neutrals/npc_dota_neutral_kobold_medium/unit.txt
+#base units/neutrals/npc_dota_neutral_kobold_big/unit.txt
+#base units/neutrals/npc_dota_neutral_ghost_small/unit.txt
+#base units/neutrals/npc_dota_neutral_wolf_small/unit.txt
+#base units/neutrals/npc_dota_neutral_centaur_small/unit.txt
+#base units/neutrals/npc_dota_neutral_satyr_small/unit.txt
+#base units/neutrals/npc_dota_neutral_ogre_warrior/unit.txt
+#base units/neutrals/npc_dota_neutral_ogre_mage/unit.txt
+#base units/bosses/npc_dota_boss_slarkling/unit.txt
+#base units/bosses/npc_dota_boss_night_stalker/unit.txt
+#base units/bosses/npc_dota_boss_sandking/unit.txt
+#base units/bosses/npc_dota_boss_doomling/unit.txt
+#base units/bosses/npc_dota_boss_bounty_huntling/unit.txt
+#base units/bosses/npc_dota_boss_nevermore_magic/unit.txt
+#base units/bosses/npc_dota_boss_nevermore_physic/unit.txt
+#base units/bosses/npc_dota_boss_tormentor/unit.txt
+#base units/bosses/npc_dota_boss_lumberjack/unit.txt
+
+"DOTAUnits"
+{
+	"npc_dummy_unit"
+	{
+		"BaseClass"					"npc_dota_creep_neutral"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"Level"						"0"
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+		"UntargetableByExorcismSpirits" "1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"StatusHealth"				"1"
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+		"CustomData"
+		{
+			"Dummy"					"1"
+			"Phased"				"1"
+			"BlockNeutralCamps"		"0"
+		}
+	}
+	"npc_dota_courier"
+	{
+		"CustomData"
+		{
+			"Invulnerable"			"1"
+		}
+	}
+}

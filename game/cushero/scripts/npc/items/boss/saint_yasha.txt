@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+	"item_saint_yasha_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/saint_yasha"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"agi;attack_speed;move_speed"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"saint yasha"
+		"ItemCost"						"5000"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_saint_yasha"
+		"AbilityValues"
+		{
+			"bonus_agility"				"65"
+		}
+	}
+}

@@ -1,0 +1,138 @@
+"DOTAAbilities"
+{
+	"boss_slarkling_dark_pact_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_slark/slark_dark_pact_start.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/slarkling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"450"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"10"
+		"AbilityTextureName"			"slark_dark_pact"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"delay"						"1.5"
+			"pulse_duration"			"1.0"
+			"radius"					"450"
+			"total_damage"				"420"
+			"total_pulses"				"10"
+			"pulse_interval"			"0.1"
+			"self_damage_pct"			"10"
+		}
+	}
+	"boss_slarkling_pounce_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_slark/slark_pounce_start.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_pounce_trail.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_pounce_ground.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_pounce_leash.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/slarkling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCooldown"				"6.0"
+		"AbilityManaCost"				"75"
+		"AbilityTextureName"			"slark_pounce"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"pounce_damage"				"100"
+			"pounce_distance"			"1200"
+			"pounce_speed"				"1599.99"
+			"pounce_acceleration"		"7000"
+			"pounce_radius"				"120"
+			"leash_duration"			"5.25"
+			"leash_radius"				"400"
+			"essence_stacks"			"12"
+		}
+	}
+	"boss_slarkling_essence_shift_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_slark/slark_essence_shift.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/slarkling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"slark_essence_shift"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"agi_gain"					"3"
+			"stat_loss"					"1"
+			"duration"					"20"
+		}
+	}
+	"boss_slarkling_depth_shroud_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_slark/slark_shard_depth_shroud.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/slarkling"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"75"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"slark_depth_shroud"
+		"AbilityValues"
+		{
+			"duration"					"3"
+			"radius"					"250"
+		}
+	}
+	"boss_slarkling_shadow_dance_lua"
+	{
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_slark/slark_shadow_dance.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_shadow_dance_dummy.vpcf"
+			"particle"		"particles/units/heroes/hero_slark/slark_regen.vpcf"
+			"particle"		"particles/status_fx/status_effect_slark_shadow_dance.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/slarkling"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"120"
+		"AbilityTextureName"			"slark_shadow_dance"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"duration"					"4.5"
+			"fade_time"					"0.0"
+			"bonus_movement_speed"		"48"
+			"bonus_regen_pct"			"25"
+			"activation_delay"			"0.5"
+			"neutral_disable"			"2.0"
+		}
+	}
+}

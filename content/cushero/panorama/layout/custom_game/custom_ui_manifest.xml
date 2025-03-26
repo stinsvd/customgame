@@ -1,0 +1,16 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/lib/vector.js" />
+		<include src="file://{resources}/scripts/custom_game/util.js" />
+		<include src="file://{resources}/scripts/custom_game/lib/vector_targeting.js" />
+		<include src="file://{resources}/scripts/custom_game/lib/selection.js" />
+		<include src="file://{resources}/scripts/custom_game/lib/minimap.js" />
+		<include src="file://{resources}/scripts/custom_game/misc.js" />
+	</scripts>
+	<Panel>
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/lib/notifications.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/spell_shop.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/duel.xml" />
+		<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/kill_limit.xml" />
+	</Panel>
+</root>

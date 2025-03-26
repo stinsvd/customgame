@@ -1,0 +1,17 @@
+"DOTAAbilities"
+{
+	"neutral_cloak_aura_lua"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/units/neutrals"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"							"1"
+		"AbilityTextureName"				"mudgolem_cloak_aura"
+		"AbilityValues"
+		{
+			"bonus_magical_armor"			"10"
+			"bonus_magical_armor_creeps"	"20"
+			"radius"						"1200"
+		}
+	}
+}

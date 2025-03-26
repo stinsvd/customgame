@@ -1,0 +1,86 @@
+"DOTAAbilities"
+{
+	"item_recipe_strength_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_strength_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_bottle;item_reaver"
+		}
+	}
+	"item_strength_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/strength_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"str;damage;armor;health"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"strength amulet;strange amulet"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"
+		"AbilityCooldown"				"55"
+		"AbilityTextureName"			"item_strength_amulet"
+		"AbilityValues"
+		{
+			"bonus_strength"			"35"
+			"bonus_strength_per_charge"	"1"
+			"bonus_armor_per_charge"	"1"
+			"bonus_health_per_charge"	"45"
+			"active_duration"			"3.75"
+			"active_strength_multiplier" "65"
+			"max_charges"				"35"
+		}
+	}
+	"item_recipe_tarrasque_amulet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"6525"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_tarrasque_amulet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_strength_amulet_lua;item_heart;item_angels_armor_lua"
+		}
+	}
+	"item_tarrasque_amulet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/strength_amulet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"str;damage;armor;health;armor;agi;int;attack_speed;regen_health"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"strength amulet;strange amulet;tarrasque amulet"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"0"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"
+		"AbilityCooldown"				"40"
+		"AbilityTextureName"			"item_tarrasque_amulet"
+		"AbilityValues"
+		{
+			"bonus_strength"			"70"
+			"bonus_strength_per_charge"	"3"
+			"bonus_armor_per_charge"	"3"
+			"bonus_health_per_charge"	"80"
+			"active_duration"			"5"
+			"active_strength_multiplier" "135"
+			"max_charges"				"100"
+			"health_regen_pct"			"4"
+			"bonus_armor"				"25"
+			"bonus_attack_speed"		"65"
+			"bonus_health"				"1500"
+			"bonus_all_stats"			"20"
+		}
+	}
+}

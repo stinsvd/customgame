@@ -1,0 +1,13 @@
+"AddonInfo"
+{
+	"maps"							"custom_dota"
+	"HeroGuidesSupported"			"1"
+	"PenaltiesEnabled"				"0"
+	"ForceDefaultGuide"				"0"
+	"EnablePickRules"				"0"
+	"IsPlayable"					"1"
+	"custom_dota"
+	{
+		"MaxPlayers"				"10"
+	}
+}

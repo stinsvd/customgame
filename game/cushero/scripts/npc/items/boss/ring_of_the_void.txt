@@ -1,0 +1,23 @@
+"DOTAAbilities"
+{
+	"item_ring_of_the_void_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/ring_of_the_void"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"hard_to_tag"
+		"ItemQuality"					"component"
+		"ItemAliases"					"ring of the void"
+		"ItemCost"						"5000"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_ring_of_the_void"
+		"AbilityValues"
+		{
+			"damage_pct"				"3"
+			"duration" 					"6"
+			"max_stacks"				"10"
+		}
+	}
+}

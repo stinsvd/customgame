@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+	"item_recipe_helm_of_tyrant_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"300"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_helm_of_tyrant_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_helm_of_the_overlord_lua;item_blessed_essence_lua"
+		}
+	}
+	"item_helm_of_tyrant_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/helm_of_the_dominator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		"AbilityManaCost"				"0"
+		"ItemShopTags"					"damage;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"hoto;helm of the overlord"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_helm_of_tyrant"
+		"AbilityValues"
+		{
+			"bonus_stats"				"40"
+			"bonus_armor"				"12"
+			"bonus_regen"				"12"
+			"bonus_health"				"1500"
+			"damage_pct_per_primary"	"3"
+			"health_pct_per_strength"	"0.85"
+			"hp_regen_per_strength"		"0.8"
+			"attack_speed_per_agility"	"0.75"
+			"armor_per_agility"			"0.4"
+			"spell_amplify_per_intellect" "0.8"
+		}
+	}
+}

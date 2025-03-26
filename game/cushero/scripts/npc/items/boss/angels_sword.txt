@@ -1,0 +1,23 @@
+"DOTAAbilities"
+{
+	"item_angels_sword_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/angels_sword"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"damage;magic block"
+		"ItemQuality"					"component"
+		"ItemAliases"					"angels sword"
+		"ItemCost"						"5000"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityCooldown"				"22"
+		"AbilityTextureName"			"item_angels_sword"
+		"AbilityValues"
+		{
+			"bonus_damage"				"150"
+			"shield_duration"			"3.5"
+		}
+	}
+}

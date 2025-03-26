@@ -1,0 +1,55 @@
+"DOTAAbilities"
+{
+	"item_recipe_shiva_armageddon_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"750"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_shiva_armageddon_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_shivas_guard;item_blessed_essence_lua"
+		}
+	}
+	"item_shiva_armageddon_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shiva_armageddon"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCooldown"				"26"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"100"
+		"ItemShopTags"					"int;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"shiva's guard;shivas"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_shiva_armageddon"
+		"AbilityValues"
+		{
+			"bonus_armor"				"20"
+			"aura_radius"				"1200"
+			"aura_attack_speed"			"-50"
+			"blast_damage"				"350"
+			"blast_movement_speed"		"-50"
+			"blast_debuff_duration"		"4"
+			"blast_radius"				"900"
+			"blast_speed"				"400"
+			"hp_regen_degen_aura"		"40"
+			"bonus_all_stats"			"25"
+			"bonus_health"				"550"
+			"bonus_health_regen"		"10"
+			"illusion_multiplier_pct"	"150"
+			"explosion_min_range"		"195"
+			"explosion_radius"			"320"
+			"explosion_damage"			"475"
+			"explosion_damage_per_int"	"0.3"
+			"spell_amp"					"25"
+			"resist_debuff_duration"	"16"
+		}
+	}
+}

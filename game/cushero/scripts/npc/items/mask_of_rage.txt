@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+	"item_recipe_mask_of_rage_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mask_of_rage_lua"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_madness;item_blitz_knuckles;item_mithril_hammer"
+		}
+	}
+	"item_mask_of_rage_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mask_of_rage"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"mor;mask of rage"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"25"
+		"AbilityTextureName"			"item_mask_of_rage"
+		"AbilityValues"
+		{
+			"bonus_damage"				"55"
+			"bonus_attack_speed"		"45"
+			"lifesteal_percent"			"30"
+			"berserk_bonus_attack_speed" "140"
+			"berserk_bonus_movement_speed" "35"
+			"berserk_armor_reduction"	"12"
+			"berserk_duration"			"6.0"
+			"berserk_hp_leech_percent"	"1.5"
+		}
+	}
+}

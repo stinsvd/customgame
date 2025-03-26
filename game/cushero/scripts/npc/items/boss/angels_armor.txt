@@ -1,0 +1,24 @@
+"DOTAAbilities"
+{
+	"item_angels_armor_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/angels_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"armor;attackspeed;health;int;str;agi"
+		"ItemQuality"					"component"
+		"ItemAliases"					"angels armor"
+		"ItemCost"						"7500"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_angels_armor"
+		"AbilityValues"
+		{
+			"bonus_armor"				"22"
+			"bonus_attack_speed"		"60"
+			"bonus_health"				"200"
+			"bonus_all_stats"			"10"
+		}
+	}
+}

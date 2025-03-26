@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+	"tidehunter_blubber_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/tidehunter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"3"
+		"AbilityTextureName"			"tidehunter_blubber"
+		"AbilityValues"
+		{
+			"damage_cleanse"
+			{
+				"value"					"500"
+			}
+			"damage_reset_interval"	"7.0"
+		}
+	}
+}

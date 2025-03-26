@@ -1,0 +1,49 @@
+"DOTAAbilities"
+{
+	"item_recipe_refresher_core_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_refresher_core_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_refresher;item_octarine_core"
+		}
+	}
+	"item_refresher_core_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/refresher_core"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"170.0"
+		"AbilityManaCost"				"300"
+		"ItemShopTags"					"regen_health;regen_mana;hard_to_tag;move_speed;boost_mana;mana_pool"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"refresher orb;mana;mb;octarine core;refresher core"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_refresher_core"
+		"AbilitySharedCooldown"			"refresher"
+		"AbilityValues"
+		{
+			"bonus_health_regen"		"13"
+			"bonus_mana_regen"			"10"
+			"bonus_cooldown"			"25"
+			"bonus_health"				"675"
+			"bonus_mana"				"725"
+			"bonus_damage"				"50"
+			"instant_recharge_chance"	"10"
+			"instant_recharge_duration"	"2.5"
+			"instant_recharge_mana_cost" "50"
+			"instant_recharge_cooldown"	"50"
+			"instant_recharge_spell_lifesteal" "25"
+			"instant_recharge_cast_point_reduction" "80"
+		}
+	}
+}

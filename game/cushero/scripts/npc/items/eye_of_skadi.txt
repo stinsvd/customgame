@@ -1,0 +1,38 @@
+"DOTAAbilities"
+{
+	"item_recipe_eye_of_skadi_2_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"9000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eye_of_skadi_2_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_skadi;item_skadi"
+		}
+	}
+	"item_eye_of_skadi_2_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/eye_of_skadi"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"eos2;eye of skadi 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_eye_of_skadi_2"
+		"AbilityValues"
+		{
+			"bonus_all_stats"			"75"
+			"bonus_health"				"1250"
+			"bonus_mana"				"1250"
+			"cold_slow"					"-45"
+			"cold_attack_slow"			"-100"
+			"cold_duration"				"3.0"
+			"heal_reduction"			"60"
+		}
+	}
+}

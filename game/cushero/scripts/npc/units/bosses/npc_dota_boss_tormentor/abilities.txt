@@ -1,0 +1,27 @@
+"DOTAAbilities"
+{
+	"tormentor_reflecting_shield_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/tormentor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"1200"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"miniboss_reflect"
+		"AbilityValues"
+		{
+			"damage_absorb"				"200000"
+			"regen_per_second"			"1500"
+			"reflection"				"150"
+		}
+	}
+	"tormentor_harden_skin_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/units/tormentor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"miniboss_unyielding_shield"
+	}
+}

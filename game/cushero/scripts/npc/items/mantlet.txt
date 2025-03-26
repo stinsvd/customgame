@@ -1,0 +1,44 @@
+"DOTAAbilities"
+{
+	"item_recipe_mantlet_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"900"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mantlet_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_vanguard;item_leaf_buckler_lua;item_pavise"
+		}
+	}
+	"item_mantlet_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mantlet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"block;regen_health;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"stout shield;leaf buckler;mantlet"
+		"ShouldBeSuggested"				"1"
+		"AbilityCooldown"				"22"
+		"AbilityManaCost"				"50"
+		"AbilityCastRange"				"1000"
+		"AbilityTextureName"			"item_mantlet"
+		"AbilityValues"
+		{
+			"damage_block"				"85"
+			"block_chance"				"65"
+			"active_absorb"				"2000"
+			"active_duration"			"12"
+			"bonus_armor"				"10"
+			"bonus_all_stats"			"26"
+			"bonus_health"				"500"
+			"bonus_health_regen"		"12"
+			"bonus_mana_regen"			"7"
+		}
+	}
+}

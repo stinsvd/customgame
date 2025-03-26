@@ -1,0 +1,8 @@
+custom_dota
+{
+	material materials/overviews/custom_dota.vmat
+	pos_x -8222
+	pos_y 9146
+	scale 16.713
+}
+

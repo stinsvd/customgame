@@ -1,0 +1,231 @@
+.SpellShopRoot {
+	width: 100%;
+	height: 100%;
+}
+
+#SpellShopButtons {
+    vertical-align: bottom;
+	position: 0 -244px 0;
+	width: 244px;
+	height: 36px;
+	flow-children: right;
+}
+
+.HUDFlipped #SpellShopButtons {
+	flow-children: left;
+	horizontal-align: right;
+}
+
+.MinimapExtraLarge #SpellShopButtons {
+	width: 280px;
+	position: 0 -280px 0;
+}
+
+#SpellShopOpen {
+	height: 100%;
+	width: 100%;
+    background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_inrange_psd.vtex");
+	background-repeat: no-repeat;
+	background-size: 100%;
+    brightness: 1.0;
+    box-shadow: #00000055 0 0 2px 2px;
+    transition-property: background-image;
+    transition-duration: .18s;
+    transition-timing-function: ease-in-out;
+    tooltip-position: top;
+}
+
+#SpellShopOpen Label {
+	text-overflow: shrink;
+}
+
+#SpellShopOpen:hover {
+    background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_hover_psd.vtex");
+}
+
+#SpellShopBackground {
+	width: 70%;
+	height: 75%;
+	background-color: #161616;
+	horizontal-align: center;
+	vertical-align: center;
+	z-index: 1;
+	opacity: 0.95;
+	flow-children: down;
+	visibility: collapse;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.AspectRatio4x3 #SpellShopBackground {
+	width: 90%;
+}
+
+.AspectRatio16x10 #SpellShopBackground {
+	width: 78%;
+}
+
+#SpellShopTitle {
+	horizontal-align: center;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	font-size: 26px;
+	text-shadow: 1px 1px 1px 1.0 white;
+}
+
+#SpellShopAbilitiesContainer {
+	height: 70%;
+	width: 100%;
+	flow-children: down;
+}
+
+#SpellsHeroSelection {
+	margin-left: 3%;
+	margin-right: 3%;
+	flow-children: right;
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+}
+
+.SpellsHeroSelection {
+	margin-top: 4%;
+	flow-children: right-wrap;
+	width: fill-parent-flow(1.0);
+	height: 100%;
+}
+
+#SpellsHeroSelectionALL {
+	width: 18%;
+}
+
+.SpellsHeroIcon {
+	width: 51px;
+	height: 83px;
+	border: 5px solid #00000000;
+    transition-property: border;
+    transition-duration: .2s;
+}
+.SpellsHeroIcon:hover {
+	border: -2px solid #ffffff00;
+}
+
+.SpellsHeroIcon.Selected {
+	border: 2px solid white;
+}
+
+#SpellShopFooter {
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+#SpellsSpellSelection {
+	flow-children: right-wrap;
+	horizontal-align: center;
+}
+
+.SpellsSpellIcon {
+	width: 64px;
+	height: 64px;
+	border: 2px solid black;
+}
+
+.SpellsSpellIcon.Selected:not(.Disabled) {
+	border: 2px solid white;
+}
+
+.SpellsSpellIcon.AlreadyHas {
+	saturation: 0.5;
+	brightness: 0.5;
+}
+
+.SpellsSpellIcon.Disabled {
+	saturation: 0.0;
+	brightness: 0.1;
+}
+
+#SpellsSpellButtons {
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 10px;
+}
+
+.SpellButtons {
+	min-width: 100px;
+	min-height: 50px;
+	brightness: 0.75;
+	background-color: #9d1400;
+	border: 5px solid black;
+    transition-property: brightness;
+    transition-duration: .2s;
+}
+.SpellButtons:hover {
+	brightness: 1.2;
+}
+
+.SpellButtons Label {
+	font-size: 24px;
+	color: white;
+	text-transform: uppercase;
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: center;
+}
+
+#SpellShopSwapContainer {
+	horizontal-align: center;
+	margin-top: 10px;
+	flow-children: down;
+}
+
+#SpellShopSwapTitle {
+	color: white;
+	text-align: center;
+	horizontal-align: center;
+	text-transform: uppercase;
+}
+
+#SpellShopSwapAbilities {
+	horizontal-align: center;
+	flow-children: right;
+	height: 48px;
+}
+
+#SpellShopSwapAbilities DOTAAbilityImage {
+	height: 48px;
+	width: 48px;
+	margin-left: 5px;
+	margin-right: 5px;
+	horizontal-align: center;
+}
+
+@keyframes 'SmoothOpen' {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes 'SmoothClose' {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.SmoothOpen {
+	animation-name: SmoothOpen;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+.SmoothClose {
+	animation-name: SmoothClose;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}

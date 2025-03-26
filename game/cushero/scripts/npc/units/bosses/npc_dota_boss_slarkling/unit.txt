@@ -1,0 +1,200 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_slarkling"
+	{
+		"Model"						"models/heroes/slark/slark.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Slark"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"2.1"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		//"vscripts"					"ai/boss"
+		"Ability1"					"boss_slarkling_dark_pact_lua"
+		"Ability2"					"boss_slarkling_pounce_lua"
+		"Ability3"					"boss_slarkling_essence_shift_lua"
+		"Ability4"					"boss_slarkling_depth_shroud_lua"
+		"Ability5"					"boss_ability"
+		"Ability6"					"boss_slarkling_shadow_dance_lua"
+		"Ability7"					"idle_stone"
+		"ArmorPhysical"				"74"
+		"MagicalResistance"			"60"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"740"
+		"AttackDamageMax"			"860"
+		"AttackRate"				"0.6"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"200"
+		"RingRadius"				"140"
+		"HealthBarOffset"			"310"
+		"BountyXP"					"3400"
+		"BountyGoldMin"				"2800"
+		"BountyGoldMax"				"3600"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"380"
+		"StatusHealth"				"112000"
+		"StatusHealthRegen"			"366"
+		"StatusMana"				"1400"
+		"StatusManaRegen"			"25"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models/heroes/slark/slark.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_slark.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"25"
+					"RoamDistance"		"1200"
+				}
+			}
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "9164"}
+				"Wearable2" {"ItemDef" "7974"}
+				"Wearable3" {"ItemDef" "13547"}
+				"Wearable4" {"ItemDef" "17680"}
+				"Wearable5" {"ItemDef" "17681"}
+			}
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"Daedalus"
+				{
+					"Item"				"item_greater_crit"
+				}
+				"DiffusalBlade"
+				{
+					"Item"				"item_diffusal_blade"
+				}
+				"Skadi"
+				{
+					"Item"				"item_skadi"
+				}
+				"AbyssalBlade"
+				{
+					"Item"				"item_abyssal_blade"
+				}
+				"Butterfly"
+				{
+					"Item"				"item_butterfly"
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_slarkling_pounce_lua"
+					"Damage"			"1"
+					"Radius"			"1200"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_slarkling_dark_pact_lua"
+					"Damage"			"1"
+					"AOE"				"1"
+					"Radius"			"450"
+					"MinimumTargets"	"1"
+				}
+			}
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_slarkling_depth_shroud_lua"
+					"UseAtHealthPercent""15"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_slarkling_shadow_dance_lua"
+					"UseAtHealthPercent""15"
+				}
+				"Ability3"
+				{
+					"Name"				"boss_slarkling_pounce_lua"
+					"Damage"			"1"
+					"Radius"			"1200"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability4"
+				{
+					"Name"				"boss_slarkling_dark_pact_lua"
+					"Damage"			"1"
+					"AOE"				"1"
+					"Radius"			"450"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"75"
+							"item_icarus_lua"				"50"
+							"item_dead_boots_lua"			"75"
+							"item_saint_yasha_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_angels_sword_lua"			"75"
+							"item_blessed_essence_lua"		"75"
+							"item_angels_armor_lua"			"50"
+							"item_cursed_sange_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

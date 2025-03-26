@@ -1,0 +1,22 @@
+"DOTAAbilities"
+{
+	"item_tome_of_hero_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/tome_of_hero"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tome of hero;tome of level;tome of lvl"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeSuggested"				"1"
+		"ItemCost"						"1000"
+		"AbilityTextureName"			"item_tome_of_hero"
+	}
+}

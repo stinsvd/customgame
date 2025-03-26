@@ -1,0 +1,57 @@
+"DOTAAbilities"
+{
+	"item_recipe_aeon_greaves_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"300"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aeon_greaves_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_guardian_greaves;item_aeon_disk;item_dead_boots_lua" // TODO: dead boots stats
+		}
+	}
+	"item_aeon_greaves_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/aeon_greaves"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag;str"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"guardian greaves;ad;aeon disk;ag; aeon greaves"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+		"AbilityCooldown"				"35"
+		"AbilityCastRange" 				"1200"
+		"AbilityManaCost"				"0"
+		"AbilityTextureName"			"item_aeon_greaves"
+		"AbilityValues"
+		{
+			"bonus_movement"			"65"
+			"bonus_mana"				"650"
+			"bonus_armor"				"14"
+			"aura_health_regen"			"5.5"
+			"aura_armor"				"5"
+			"aura_health_regen_bonus"	"30"
+			"aura_armor_bonus"			"25"
+			"aura_bonus_threshold"		"35"
+			"aura_radius"				"1200"
+			"replenish_health"			"800"
+			"replenish_mana"			"600"
+			"replenish_radius"			"1200"
+			"auto_use_threshold"		"15"
+			"save_cooldown"				"60"
+			"save_threshold"			"65"
+			"bonus_health"				"350"
+			"status_resistance"			"80"
+			"damage_penalty"			"50"
+			"buff_duration"				"3.5"
+			"bonus_all_stats"			"20"
+			"bonus_health_regen"		"25"
+		}
+	}
+}

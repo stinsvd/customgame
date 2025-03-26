@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+	"item_recipe_polar_spear_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_polar_spear_lua"
+		"ItemRequirements"
+		{
+			"01"						"item_staff_of_wizardry;item_point_booster"
+		}
+	}
+	"item_polar_spear_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/polar_spear"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH | DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ItemShopTags"					"int;health;mana"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"polar spear;ps"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18.0"
+		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"50"
+		"AbilityTextureName"			"item_polar_spear"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"15"
+			"bonus_mana"				"225"
+			"bonus_health"				"225"
+		}
+	}
+}

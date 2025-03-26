@@ -1,0 +1,44 @@
+"DOTAAbilities"
+{
+	"item_recipe_angels_locket_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1800"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_angels_locket_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_holy_locket;item_angels_blood_lua"
+		}
+	}
+	"item_angels_locket_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/angels_locket"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"hl;holy locket"
+		"ShouldBeInitiallySuggested"	"1"
+		"AbilityCooldown"				"13.0"
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		"AbilityTextureName"			"item_angels_locket"
+		"AbilityValues"
+		{
+			"aura_health_regen"			"25"
+			"aura_radius"				"1200"
+			"heal_increase"				"50"
+			"bonus_all_stats"			"20"
+			"buff_duration"				"4.5"
+			"buff_heal_per_heal"		"300"
+		}
+	}
+}

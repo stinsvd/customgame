@@ -1,0 +1,36 @@
+"DOTAAbilities"
+{
+	"item_recipe_heart_of_alaron_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1400"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_heart_of_alaron_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_energy_booster;item_mystic_staff"
+		}
+	}
+	"item_heart_of_alaron_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/heart_of_alaron"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"int;regen_mana;mana_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"hoa;heart of alaron"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_heart_of_alaron"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"40"
+			"bonus_mana"				"250"
+			"mana_regen_amplify_pct"	"225"
+		}
+	}
+}

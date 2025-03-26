@@ -1,0 +1,8 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_faceless_void"
+	{
+		"override_hero"	"npc_dota_hero_faceless_void"
+		"Ability3"		"faceless_void_time_lock_lua"
+	}
+}

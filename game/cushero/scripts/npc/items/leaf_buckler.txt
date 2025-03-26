@@ -1,0 +1,40 @@
+"DOTAAbilities"
+{
+	"item_recipe_leaf_buckler_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"25"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_leaf_buckler_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_ring_of_protection;item_branches;item_boots_of_elves"
+		}
+	}
+	"item_leaf_buckler_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/leaf_buckler"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"block"
+		"ItemQuality"					"common"
+		"ItemAliases"					"stout shield; leaf buckler"
+		"ShouldBeSuggested"				"1"
+		"AbilityCooldown"				"4"
+		"AbilityTextureName"			"item_leaf_buckler"
+		"AbilityValues"
+		{
+			"damage_block"				"20"
+			"block_chance"				"50"
+			"active_agility"			"6"
+			"active_duration"			"1"
+			"bonus_armor"				"2"
+			"bonus_all_stats"			"2"
+			"bonus_agility"				"8"
+		}
+	}
+}

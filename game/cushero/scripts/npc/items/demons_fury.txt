@@ -1,0 +1,55 @@
+"DOTAAbilities"
+{
+	"item_recipe_demons_fury_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1200"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_demons_fury_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury_2_lua;item_burning_blades_lua"
+		}
+	}
+	"item_demons_fury_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"4.0"
+		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bf;battle fury;demons fury;df"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		"AbilityTextureName"			"item_demons_fury"
+		"AbilityValues"
+		{
+			"bonus_damage"				"285"
+			"bonus_health_regen"		"30"
+			"bonus_mana_regen"			"12"
+			"cleave_damage_percent"		"85"
+			"quelling_bonus"			"165"
+			"quelling_bonus_ranged"		"130"
+			"cleave_starting_width"		"150"
+			"cleave_ending_width"		"360"
+			"cleave_distance"			"650"
+			"bonus_all_stats"			"110"
+			"armor_reduction"			"-25"
+			"duration"					"7.0"
+			"bonus_damage_per_kill"		"10"
+			"bonus_damage_per_assist"	"5"
+			"max_damage"				"300"
+			"chop_radius"				"215"
+		}
+	}
+}

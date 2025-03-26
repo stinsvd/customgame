@@ -1,0 +1,36 @@
+"DOTAAbilities"
+{
+	"item_recipe_icarus_daedalus_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"700"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_icarus_daedalus_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_greater_crit;item_icarus_lua;item_angels_blood"
+		}
+	}
+	"item_icarus_daedalus_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/icarus_daedalus"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"icarus daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_icarus_daedalus"
+		"AbilityValues"
+		{
+			"bonus_damage"				"185"
+			"crit_chance"				"35"
+			"crit_multiplier"			"300"
+			"bonus_health_regen"		"25"
+		}
+	}
+}

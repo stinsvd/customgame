@@ -1,0 +1,37 @@
+"DOTAAbilities"
+{
+	"item_recipe_demons_reaper_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"2500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_demons_reaper_lua"
+		"ItemRequirements"
+		{
+			"01"						"item_mask_of_rage_lua;item_demons_claw_lua"
+		}
+	}
+	"item_demons_reaper_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/demons_reaper"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"ItemShopTags"					"unique;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"demons reaper"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"			"item_demons_reaper"
+		"AbilityValues"
+		{
+			"bonus_damage"				"350"
+			"bonus_attack_speed"		"200"
+			"lifesteal_percent"			"35"
+			"hp_leech_percent"			"2.75"
+		}
+	}
+}

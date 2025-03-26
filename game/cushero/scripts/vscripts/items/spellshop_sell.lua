@@ -1,0 +1,1 @@
+item_spellshop_sell_lua = item_spellshop_sell_lua or class(ability_lua_base)

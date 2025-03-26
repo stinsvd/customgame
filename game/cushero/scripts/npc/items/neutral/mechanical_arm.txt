@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+	"item_mechanical_arm_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/neutral/mechanical_arm"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityTextureName"			"item_mechanical_arm_lua"
+		"AbilityValues"
+		{
+			"bat"						"1.1"
+			"stun_chance"				"20"
+			"stun_duration"				"0.2"
+		}
+	}
+}

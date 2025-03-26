@@ -1,0 +1,80 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_tormentor"
+	{
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/props_gameplay/divine_sentinel/divine_sentinel_cube.vmdl"
+		"SoundSet"					"Roshan"
+		"ModelScale"				"0.8"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"CanBeDominated"			"0"
+		"ConsideredHero"			"1"
+		"UnitLabel"					"boss"
+		"Ability1"					"tormentor_reflecting_shield_lua"
+		"Ability2"					"tormentor_harden_skin_lua"
+		"Ability3"					"boss_ability"
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"ArmorPhysical"				"400"
+		"MagicalResistance"			"60"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"125"
+		"HealthBarOffset"			"450"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"StatusHealth"				"1000"
+		"StatusHealthRegen"			"20"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"1400"
+		"HasInventory"				"1"
+		"Creature"
+		{
+			"DisableResistance"			"100"
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"AssaultCuirass"
+				{
+					"Item"				"item_assault"
+				}
+				"HeartOfTarrasque"
+				{
+					"Item"				"item_heart"
+				}
+				"Pipe"
+				{
+					"Item"				"item_pipe"
+				}
+				"Daedalus"
+				{
+					"Item"				"item_greater_crit"
+				}
+				"Butterfly"
+				{
+					"Item"				"item_butterfly"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"CantMove"					"1"
+		}
+	}
+}

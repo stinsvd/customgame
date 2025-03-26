@@ -1,0 +1,25 @@
+"DOTAAbilities"
+{
+	"item_awful_mask_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/awful_mask"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"lifesteal;health;str;armor;damage"
+		"ItemQuality"					"component"
+		"ItemAliases"					"awful mask"
+		"ItemCost"						"7500"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_awful_mask"
+		"AbilityValues"
+		{
+			"bonus_damage"				"32"
+			"bonus_armor"				"2"
+			"bonus_strength"			"20"
+			"bonus_health"				"200"
+			"lifesteal"					"22"
+		}
+	}
+}

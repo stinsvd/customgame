@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+	"item_recipe_slice_of_static_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"900"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_slice_of_static_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_null_talisman;item_mystic_staff;item_chainmail"
+		}
+	}
+	"item_slice_of_static_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/slice_of_static"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"damage;int;agi;str;armor"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"slice of static"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_slice_of_static"
+		"ItemBaseLevel"					"1"
+		"AbilityCooldown"				"21"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"27"
+			"bonus_armor"				"8"
+			"bonus_all_stats"			"5"
+			"bonus_mana_regen"			"5"
+			"bonus_max_mana_percentage"	"8"
+			"damage_pct"				"6"
+			"damage_radius"				"1100"
+			"mana_cost_pct"				"18"
+			"active_duration"			"3.5"
+			"spell_amp_per_int"			"0.05"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/duel.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/duel.js" />
+	</scripts>
+	<Panel class="DuelHudRoot" hittest="false">
+		<Panel id="DuelHudPanel" hittest="true">
+			<Panel id="DuelPanelLeft" class="DuelPanel" hittest="false">
+				<Label id="DuelTimer" text="#customheroarena_dueltimer_waiting" hittest="false" />
+				<Label id="DuelReward" text="#customheroarena_dueltimer_reward" hittest="false" />
+			</Panel>
+			<Panel id="DuelPanelRight" class="DuelPanel" hittest="false">
+				<Label id="DuelTimerValue" text="00:00" hittest="false" />
+				<Label id="DuelRewardValue" text="#customheroarena_dueltimer_reward_value" hittest="false" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

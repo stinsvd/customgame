@@ -1,0 +1,14 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/kill_limit.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/kill_limit.js" />
+	</scripts>
+	<Panel class="KillLimitHudRoot" hittest="false">
+		<Panel id="KillLimitHud" hittest="false">
+			<Label id="KillLimit" text="?" />
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+	"item_cursed_sange_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/cursed_sange"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"damage;str;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"cursed sange"
+		"ItemCost"						"5000"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_cursed_sange"
+		"AbilityValues"
+		{
+			"bonus_strength"			"65"
+		}
+	}
+}

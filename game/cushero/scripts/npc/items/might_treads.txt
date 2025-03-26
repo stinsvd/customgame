@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+	"item_recipe_might_treads_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"800"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_might_treads_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_power_treads_lua;item_bracer;item_wraith_band;item_null_talisman"
+		}
+	}
+	"item_might_treads_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/might_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_might_treads"
+		"AbilityValues"
+		{
+			"bonus_movement_speed" 		"55"
+			"bonus_stat"				"30"
+			"bonus_secondary_stat"		"10"
+			"bonus_attack_speed"		"30"
+			"bonus_str_damage"			"10"
+			"bonus_str_hp_regen"		"5"
+			"bonus_agi_attack_speed"	"15"
+			"bonus_agi_armor"			"5"
+			"bonus_int_max_mana_pct"	"5"
+			"bonus_int_mp_regen"		"5"
+		}
+	}
+}

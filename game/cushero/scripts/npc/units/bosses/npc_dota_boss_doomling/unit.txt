@@ -1,0 +1,182 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_doomling"
+	{
+		"Model"						"models/heroes/doom/doom.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_DoomBringer"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"1.6"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		//"vscripts"					"ai/boss"
+		"Ability1"					"boss_doomling_devour_lua"
+		"Ability2"					"boss_doomling_scorched_earth_lua"
+		"Ability3"					"boss_doomling_infernal_blade_lua"
+		"Ability4"					"boss_ability"
+		"Ability5"					"idle_stone"
+		"Ability6"					"boss_doomling_doom_lua"
+		"ArmorPhysical"				"120"
+		"MagicalResistance"			"75"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1812"
+		"AttackDamageMax"			"1815"
+		"AttackRate"				"0.65"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"310"
+		"RingRadius"				"190"
+		"HealthBarOffset"			"400"
+		"BountyXP"					"9200"
+		"BountyGoldMin"				"6900"
+		"BountyGoldMax"				"16000"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"520"
+		"StatusHealth"				"64000"
+		"StatusHealthRegen"			"740"
+		"StatusMana"				"4000"
+		"StatusManaRegen"			"25"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models/heroes/doom/doom.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"0"
+					"Avoidance"			"0"
+					"Support"			"100"
+					"RoamDistance"		"1200"
+				}
+			}
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "13858"}
+				"Wearable2" {"ItemDef" "13859"}
+				"Wearable3" {"ItemDef" "13860"}
+				"Wearable4" {"ItemDef" "13861"}
+				"Wearable5" {"ItemDef" "13862"}
+				"Wearable5" {"ItemDef" "13863"}
+				"Wearable5" {"ItemDef" "13864"}
+			}
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"Daedalus"
+				{
+					"Item"				"item_greater_crit"
+				}
+				"AssaultCuirass"
+				{
+					"Item"				"item_assault"
+				}
+				"Radiance"
+				{
+					"Item"				"item_radiance"
+				}
+				"ShivasGuard"
+				{
+					"Item"				"item_shivas_guard"
+				}
+				"OctarineCore"
+				{
+					"Item"				"item_octarine_core"
+				}
+			}
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_doomling_doom_lua"
+					"Damage"			"1"
+					"AOE"				"1"
+					"Radius"			"600"
+					"MinimumTargets"	"1"
+					"UseAtHealthPercent""90"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_doomling_devour_lua"
+					"Damage"			"1"
+					"AOE"				"1"
+					"Radius"			"600"
+					"MinimumTargets"	"1"
+					"UseAtHealthPercent""75"
+				}
+				"Ability3"
+				{
+					"Name"				"boss_doomling_scorched_earth_lua"
+					"Damage"			"1"
+					"AOE"				"1"
+					"Radius"			"450"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"75"
+							"item_demons_claw_lua"			"50"
+							"item_awful_mask_lua"			"50"
+							"item_icarus_lua"				"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_demons_claw_lua"			"75"
+							"item_ring_of_the_void_lua"		"50"
+							"item_angels_armor_lua"			"50"
+							"item_eclipse_amphora_lua"		"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

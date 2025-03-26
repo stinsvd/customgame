@@ -1,0 +1,40 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/spell_shop.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/util.js" />
+		<include src="file://{resources}/scripts/custom_game/spell_shop.js" />
+	</scripts>
+	<snippets>
+	</snippets>
+	<Panel class="SpellShopRoot" hittest="false">
+		<Panel id="SpellShopBackground" hittest="true">
+			<Label id="SpellShopTitle" text="Spell Shop" hittest="false" />
+			<Panel id="SpellShopAbilitiesContainer" hittest="false">
+				<Panel id="SpellsHeroSelection" hittest="false" />
+			</Panel>
+			<Panel id="SpellShopFooter">
+				<Panel id="SpellsSpellSelection" hittest="false" />
+				<Panel id="SpellsSpellButtons" hittest="false">
+					<Button id="BuySpell" class="SpellButtons" onactivate="InteractSpell('buy')" hittest="true">
+						<Label text="Buy" hittest="false" />
+					</Button>
+					<Button id="SellSpell" class="SpellButtons" onactivate="InteractSpell('sell')" hittest="true">
+						<Label text="Sell" hittest="false" />
+					</Button>
+				</Panel>
+				<Panel id="SpellShopSwapContainer">
+					<!-- <Label id="SpellShopSwapTitle" text="Swap skills:" /> -->
+					<Panel id="SpellShopSwapAbilities" hittest="false" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="SpellShopButtons" hittest="false">
+			<Button id="SpellShopOpen" class="ButtonBevel" onactivate="GameUI.SmoothToggle($('#SpellShopBackground'))" hittest="true">
+				<Label text="Spell Shop" hittest="false" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,48 @@
+"DOTAAbilities"
+{
+	"item_recipe_power_treads"
+	{
+		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
+	}
+	"item_power_treads"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_recipe_power_treads_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_power_treads_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_boots*;item_gloves;item_belt_of_strength"
+			"04"						"item_boots*;item_gloves;item_robe"
+			"06"						"item_boots*;item_gloves;item_boots_of_elves"
+		}
+	}
+	"item_power_treads_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/power_treads"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
+		"ItemQuality"					"common"
+		"ItemAliases"					"power treads"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_power_treads"
+		"AbilityValues"
+		{
+			"bonus_movement_speed" 		"50"
+			"bonus_stat"				"10"
+			"bonus_secondary_stat"		"0"
+			"bonus_attack_speed"		"25"
+		}
+	}
+}

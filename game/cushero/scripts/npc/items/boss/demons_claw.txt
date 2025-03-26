@@ -1,0 +1,21 @@
+"DOTAAbilities"
+{
+	"item_demons_claw_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/boss/demons_claw"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"component"
+		"ItemAliases"					"demons sword"
+		"ItemCost"						"7500"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"AbilityTextureName"			"item_demons_claw"
+		"AbilityValues"
+		{
+			"bonus_damage"				"250"
+		}
+	}
+}

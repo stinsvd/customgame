@@ -1,0 +1,35 @@
+"DOTAAbilities"
+{
+	"item_recipe_war_axe_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"150"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_war_axe_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_demon_edge;item_oblivion_staff"
+		}
+	}
+	"item_war_axe_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/war_axe"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"war axe"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_war_axe"
+		"AbilityValues"
+		{
+			"bonus_damage"				"65"
+			"bonus_intellect"			"15"
+			"bonus_attack_speed"		"20"
+			"bonus_mana_regen"			"1.5"
+		}
+	}
+}

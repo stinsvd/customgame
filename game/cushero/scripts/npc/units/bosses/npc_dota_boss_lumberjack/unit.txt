@@ -1,0 +1,172 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_lumberjack"
+	{
+		"Model"						"models/heroes/wraith_king/wraith_king.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_SkeletonKing"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"1.8"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		//"vscripts"					"ai/boss"
+		"Ability1"					"boss_lumberjack_hellfire_blast_lua"
+		"Ability2"					"boss_lumberjack_vampiric_aura_lua"
+		"Ability3"					"boss_lumberjack_mortal_strike_lua"
+		"Ability4"					"boss_ability"
+		"Ability5"					"idle_stone"
+		"Ability6"					"boss_lumberjack_reincarnation_lua"
+		"ArmorPhysical"				"164"
+		"MagicalResistance"			"90"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1600"
+		"AttackDamageMax"			"1900"
+		"AttackRate"				"0.9"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"1200"
+		"AttackRange"				"320"
+		"RingRadius"				"140"
+		"HealthBarOffset"			"450"
+		"BountyXP"					"46000"
+		"BountyGoldMin"				"12000"
+		"BountyGoldMax"				"20000"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"500"
+		"StatusHealth"				"1100000"
+		"StatusHealthRegen"			"4000"
+		"StatusMana"				"32000"
+		"StatusManaRegen"			"500"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models/heroes/wraith_king/wraith_king.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"0"
+					"RoamDistance"		"1200"
+				}
+			}
+			"CanRespawn"				"1"
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "13037"}
+				"Wearable2" {"ItemDef" "18186"}
+				"Wearable3" {"ItemDef" "17701"}
+				"Wearable4" {"ItemDef" "13501"}
+				"Wearable5" {"ItemDef" "9939"}
+				"Wearable5" {"ItemDef" "6918"}
+			}
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"AbyssalBlade"
+				{
+					"Item"				"item_abyssal_blade"
+				}
+				"AssaultCuirass"
+				{
+					"Item"				"item_assault"
+				}
+				"Radiance"
+				{
+					"Item"				"item_radiance"
+				}
+				"EchoSabre"
+				{
+					"Item"				"item_echo_sabre"
+				}
+				"Skadi"
+				{
+					"Item"				"item_skadi"
+				}
+			}
+			"DefensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_lumberjack_vampiric_aura_lua"
+					"Damage"			"1"
+					"AOE"				"1"
+					"Radius"			"500"
+					"MinimumTargets"	"1"
+					"UseAtHealthPercent""95"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_lumberjack_hellfire_blast_lua"
+					"Damage"			"1"
+					"Radius"			"525"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"75"
+							"item_saint_yasha_lua"			"50"
+							"item_awful_mask_lua"			"50"
+							"item_icarus_lua"				"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_eclipse_amphora_lua"		"75"
+							"item_ring_of_the_void_lua"		"50"
+							"item_demons_claw_lua"			"50"
+							"item_cursed_sange_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

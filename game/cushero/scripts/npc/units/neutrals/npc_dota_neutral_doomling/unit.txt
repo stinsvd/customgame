@@ -1,0 +1,85 @@
+"DOTAUnits"
+{
+	"npc_dota_neutral_doomling"
+	{
+		"Model"						"models/heroes/doom/doom.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_DoomBringer"
+		"Level"						"1"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ModelScale" 				"0.9"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		//"vscripts"					"ai/neutral"
+		"Ability1"					"doomling_infernal_blade_lua"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"ArmorPhysical"				"62"
+		"MagicalResistance"			"10"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"850"
+		"AttackDamageMax"			"900"
+		"AttackRate"				"1.6"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"150"
+		"AttackRange"				"150"
+		"RingRadius"				"70"
+		"HealthBarOffset"			"220"
+		"BountyXP"					"100"
+		"BountyGoldMin"				"90"
+		"BountyGoldMax"				"100"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"420"
+		"StatusHealth"				"10000"
+		"StatusHealthRegen"			"120"
+		"StatusMana"				"10000"
+		"StatusManaRegen"			"120"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"precache"
+		{
+			"model"					"models/heroes/doom/doom.vmdl"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"0"
+					"RoamDistance"		"1000"
+				}
+			}
+			"HPGain"					"130"
+			"DamageGain"				"70"
+			"ArmorGain"					"1"
+			"MagicResistGain"			"0.67"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"15"
+			"XPGain"					"50"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable2" {"ItemDef" "6095"}
+				"Wearable2" {"ItemDef" "6096"}
+				"Wearable2" {"ItemDef" "6097"}
+				"Wearable2" {"ItemDef" "6098"}
+				"Wearable2" {"ItemDef" "6100"}
+				"Wearable2" {"ItemDef" "6101"}
+				"Wearable2" {"ItemDef" "6102"}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+"DOTAAbilities"
+{
+	"item_recipe_charons_scepter_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"900"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_charons_scepter_lua"
+		"AbilityTextureName"			"item_recipe"
+		"ItemRequirements"
+		{
+			"01"						"item_cyclone"
+		}
+	}
+	"item_charons_scepter_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/charons_scepter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"18"
+		"AbilitySharedCooldown"			"cyclone"
+		"AbilityManaCost"				"175"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag;hp_regen"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"charon;charon's scepter"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_charons_scepter"
+		"AbilityValues"
+		{
+			"bonus_intellect"			"20"
+			"bonus_mana_regen"			"7.5"
+			"bonus_movement_speed"		"40"
+			"cyclone_duration"			"3"
+			"hp_regen_pct"				"8"
+		}
+	}
+}

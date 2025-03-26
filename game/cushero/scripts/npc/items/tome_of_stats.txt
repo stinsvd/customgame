@@ -1,0 +1,97 @@
+"DOTAAbilities"
+{
+	"item_tome_of_strength_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/tome_of_stats"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"consumable;str"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tome of strength;tome of str"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeSuggested"				"1"
+		"ItemCost"						"30000"
+		"AbilityTextureName"			"item_tome_of_strength"
+		"AbilityValues"
+		{
+			"strength_bonus"			"30"
+		}
+	}
+	"item_tome_of_agility_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/tome_of_stats"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"consumable;agi"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tome of agility;tome of agi"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeSuggested"				"1"
+		"ItemCost"						"30000"
+		"AbilityTextureName"			"item_tome_of_agility"
+		"AbilityValues"
+		{
+			"agility_bonus"				"30"
+		}
+	}
+	"item_tome_of_intellect_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/tome_of_stats"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"consumable;int"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tome of intellect;tome of int"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeSuggested"				"1"
+		"ItemCost"						"30000"
+		"AbilityTextureName"			"item_tome_of_intellect"
+		"AbilityValues"
+		{
+			"intellect_bonus"			"30"
+		}
+	}
+	"item_tome_of_gods_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/tome_of_stats"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemShopTags"					"consumable;str;agi;int"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tome of gods"
+		"ShouldBeSuggested"				"1"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeSuggested"				"1"
+		"ItemCost"						"90000"
+		"AbilityTextureName"			"item_tome_of_gods"
+		"AbilityValues"
+		{
+			"strength_bonus"			"30"
+			"agility_bonus"				"30"
+			"intellect_bonus"			"30"
+		}
+	}
+}

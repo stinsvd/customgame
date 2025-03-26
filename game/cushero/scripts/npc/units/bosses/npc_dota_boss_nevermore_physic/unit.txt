@@ -1,0 +1,188 @@
+"DOTAUnits"
+{
+	"npc_dota_boss_nevermore_physic"
+	{
+		"Model"						"models/heroes/shadow_fiend/shadow_fiend.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Nevermore"
+		"Level"						"100"
+		"IsAncient"					"1"
+		"CanBeDominated"			"0"
+		"ImmuneToInfest"			"1"
+		"ImmuneToOmnislash"			"1"
+		"ConsideredHero"			"1"
+		"ModelScale" 				"2.6"
+		"IsNeutralUnitType"			"1"
+		"UseNeutralCreepBehavior"	"1"
+		"UnitLabel"					"boss"
+		"Ability1"					"boss_nevermore_physic_shadowraze_1_lua"
+		"Ability2"					"boss_nevermore_physic_shadowraze_2_lua"
+		"Ability3"					"boss_nevermore_physic_shadowraze_3_lua"
+		"Ability4"					"boss_nevermore_physic_necromastery_lua"
+		"Ability5"					"boss_nevermore_physic_dark_lord_lua"
+		"Ability6"					"boss_nevermore_physic_requiem_lua"
+		"Ability7"					"boss_ability"
+		"Ability8"					"idle_stone"
+		"ArmorPhysical"				"74"
+		"MagicalResistance"			"70"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"1020"
+		"AttackDamageMax"			"1555"
+		"AttackRate"				"0.7"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"900"
+		"ProjectileModel"			"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+		"ProjectileSpeed"			"1200"
+		"AttackRange"				"500"
+		"RingRadius"				"140"
+		"HealthBarOffset"			"550"
+		"BountyXP"					"4200"
+		"BountyGoldMin"				"3000"
+		"BountyGoldMax"				"12000"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"340"
+		"StatusHealth"				"260000"
+		"StatusHealthRegen"			"360"
+		"StatusMana"				"8000"
+		"StatusManaRegen"			"220"
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"800"
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"1"
+		"precache"
+		{
+			"model"					"models/heroes/shadow_fiend/shadow_fiend.vmdl"
+			"particle"				"particles/units/heroes/hero_nevermore/nevermore_base_attack.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		}
+		"Creature"
+		{
+			"DefaultState"				"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"				"Invade"
+					"Aggression"		"100"
+					"Avoidance"			"0"
+					"Support"			"0"
+					"RoamDistance"		"1200"
+				}
+			}
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+			"DisableResistance"			"100"
+			"DefaultState"				"Invade"
+			"AttachWearables"
+			{
+				"Wearable1" {"ItemDef" "18034"}
+				"Wearable2" {"ItemDef" "18035"}
+				"Wearable3" {"ItemDef" "18036"}
+			}
+			"EquippedItems"
+			{
+				"PhaseBoots"
+				{
+					"Item"				"item_phase_boots"
+				}
+				"Desolator"
+				{
+					"Item"				"item_desolator"
+				}
+				"MonkeyKingBar"
+				{
+					"Item"				"item_monkey_king_bar_lua"
+				}
+				"Butterfly"
+				{
+					"Item"				"item_butterfly"
+				}
+				"Daedalus"
+				{
+					"Item"				"item_greater_crit"
+				}
+				"EyeOfSkadi"
+				{
+					"Item"				"item_skadi"
+				}
+			}
+			"OffensiveAbilities"
+			{
+				"Ability1"
+				{
+					"Name"				"boss_nevermore_physic_requiem_lua"
+					"Damage"			"1"
+					"Radius"			"350"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability2"
+				{
+					"Name"				"boss_nevermore_physic_shadowraze_1_lua"
+					"Damage"			"1"
+					"Radius"			"300"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability3"
+				{
+					"Name"				"boss_nevermore_physic_shadowraze_2_lua"
+					"Damage"			"1"
+					"Radius"			"600"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+				"Ability4"
+				{
+					"Name"				"boss_nevermore_physic_shadowraze_3_lua"
+					"Damage"			"1"
+					"Radius"			"900"
+					"AOE"				"1"
+					"MinimumTargets"	"1"
+				}
+			}
+		}
+		"CustomData"
+		{
+			"Drop"
+			{
+				"AlwaysDrop"								"1"
+				"Presets"
+				{
+					"1"
+					{
+						"items"
+						{
+							"item_angels_blood_lua"			"50"
+							"item_blessed_essence_lua"		"50"
+							"item_dead_boots_lua"			"75"
+							"item_cursed_sange_lua"			"75"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+					"2"
+					{
+						"items"
+						{
+							"item_angels_sword_lua"			"50"
+							"item_blessed_essence_lua"		"75"
+							"item_demons_claw_lua"			"50"
+							"item_saint_yasha_lua"			"50"
+							"item_spellshop_sell_lua"		"100"
+						}
+						"chance"							"50"
+					}
+				}
+			}
+		}
+	}
+}

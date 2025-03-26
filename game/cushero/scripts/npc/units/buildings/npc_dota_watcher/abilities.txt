@@ -1,0 +1,11 @@
+"DOTAAbilities"
+{
+	"ability_lamp_use"
+	{
+		"AbilityValues"
+		{
+			"active_duration"			"150"
+			"inactive_duration"			"30"
+		}
+	}
+}

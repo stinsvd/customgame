@@ -1,0 +1,51 @@
+"DOTAAbilities"
+{
+	"item_recipe_helm_of_the_dominator"
+	{
+		"ItemPurchasable"				"0"
+		"ItemRecipe"					"0"
+	}
+	"item_helm_of_the_dominator"
+	{
+		"ItemPurchasable"				"0"
+	}
+	"item_recipe_helm_of_the_dominator_lua"
+	{
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"650"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_helm_of_the_dominator_lua"
+		"AbilityTextureName"			"item_recipe_helm_of_the_dominator"
+		"ItemRequirements"
+		{
+			"01"						"item_helm_of_iron_will;item_diadem"
+		}
+	}
+	"item_helm_of_the_dominator_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/helm_of_the_dominator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+		"AbilityManaCost"				"0"
+		"ItemShopTags"					"damage;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"hotd;helm of the dominator"
+		"ShouldBeSuggested"				"1"
+		"AbilityTextureName"			"item_helm_of_the_dominator"
+		"AbilityValues"
+		{
+			"bonus_stats"				"6"
+			"bonus_armor"				"6"
+			"bonus_regen"				"6"
+			"damage_pct_per_primary"	"1.2"
+			"health_pct_per_strength"	"0.3"
+			"hp_regen_per_strength"		"0.15"
+			"attack_speed_per_agility"	"0.35"
+			"armor_per_agility"			"0.1"
+			"spell_amplify_per_intellect" "0.15"
+		}
+	}
+}

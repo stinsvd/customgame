@@ -1,0 +1,25 @@
+"DOTAAbilities"
+{
+	"item_spellshop_sell_lua"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/spellshop_sell"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"spellshop;cocktail"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeSuggested"				"1"
+		"ShouldBeInitiallySuggested"	"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"0"
+		"ItemCost"						"10000"
+		"AbilityTextureName"			"item_cocktail_spellshop_sell"
+	}
+}

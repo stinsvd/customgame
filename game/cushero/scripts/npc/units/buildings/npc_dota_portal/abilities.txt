@@ -1,0 +1,18 @@
+"DOTAAbilities"
+{
+	"teleport_portal_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/buildings/portal"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NOASSIST | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+		"AbilityChannelTime"			"3"
+		"IsCastableWhileHidden"			"1"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"150"
+		"AbilityTextureName"			"abyssal_underlord_portal_warp"
+	}
+}

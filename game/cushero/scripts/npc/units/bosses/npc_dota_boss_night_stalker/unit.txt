@@ -3,6 +3,7 @@
 	"npc_dota_boss_night_stalker"
 	{
 		"Model"						"models/heroes/nightstalker/nightstalker.vmdl"
+		"Model1"					"models/heroes/nightstalker/nightstalker_night.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_NightStalker"
 		"Level"						"100"

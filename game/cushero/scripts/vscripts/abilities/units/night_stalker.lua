@@ -153,6 +153,7 @@ function boss_night_stalker_darkness_lua:OnSpellStart()
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControl(fx, 0, self:GetCaster():GetAbsOrigin())
 	ParticleManager:SetParticleControl(fx, 1, self:GetCaster():GetAbsOrigin())
+	ParticleManager:ReleaseParticleIndex(fx)
 end
 
 modifier_boss_night_stalker_darkness_lua = modifier_boss_night_stalker_darkness_lua or class({})

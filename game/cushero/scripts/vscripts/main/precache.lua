@@ -38,7 +38,6 @@ function PrecacheModule:Init(context)
 		end
 	end
 	for unitname, unitdata in pairs(units_kv) do
-		if unitname == "npc_dota_boss_night_stalker" then print("ns loaded") end
 		PrecacheModel(unitdata["Model"], context)
 		if unitdata["Model1"] then
 			PrecacheModel(unitdata["Model1"], context)

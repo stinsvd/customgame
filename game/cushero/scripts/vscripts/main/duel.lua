@@ -192,6 +192,7 @@ function CustomHeroArenaDuel:OnDuelEnd(WinnerTeam, trigger_entindex)
 			local multiplier = (networth/team_networth)*max_multiplier
 			PlayerResource:ModifyGold(playerID, bonus["gold"]*multiplier, false, DOTA_ModifyGold_HeroKill)
 			hero:AddExperience(bonus["xp"]*multiplier, DOTA_ModifyXP_HeroKill, true, true)
+			hero:RemoveModifierByName("modifier_item_third_eye_lua")
 		end
 	end
 	Notifications:TopToAll({text=WinnerTeam ~= DOTA_TEAM_NOTEAM and tostring("#CustomHeroArena_duel_win_"..WinnerTeam) or "#CustomHeroArena_duel_draw", duration=5, color=WinnerTeam ~= DOTA_TEAM_NOTEAM and "white" or "red"})

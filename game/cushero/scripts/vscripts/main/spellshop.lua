@@ -1,4 +1,71 @@
-CustomHeroArenaSpellShop = CustomHeroArenaSpellShop or class({})
+if CustomHeroArenaSpellShop == nil then
+	_G.CustomHeroArenaSpellShop = class({})
+end
+
+function CustomHeroArenaSpellShop:Init()
+	local blockedHeroes = {
+		npc_dota_hero_target_dummy = true,
+		npc_dota_hero_base = true,
+	--	npc_dota_hero_kez = true,
+	}
+	local blockedAbil = {
+		generic_hidden = true,
+		arc_warden_tempest_double = true,
+		meepo_divided_we_stand = true,
+		morphling_morph_agi = true,
+		morphling_morph_str = true,
+		morphling_replicate = true,
+		ringmaster_empty_souvenir = true,
+		rubick_spell_steal = true,
+	}
+	local spells = {}
+	local heroes = {}
+	local function AddHeroToList(heroname)
+		--[[
+		local heroinfo = GetUnitKeyValuesByName(heroname)
+		heroes[heroname] = {attribute=heroinfo["AttributePrimary"]}
+		spells[heroname] = spells[heroname] or {}
+		for i=1, (heroinfo["AbilityTalentStart"] or 10)-1 do
+			local spell = heroinfo[tostring("Ability"..i)]
+			if spell and not blockedAbil[spell] then
+				local kv = GetAbilityKeyValuesByName(spell)
+				if kv ~= nil and not string.find(kv.AbilityBehavior, "DOTA_ABILITY_BEHAVIOR_HIDDEN") and not string.find(kv.AbilityBehavior, "DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES") and tostring(kv["Innate"]) ~= "1" then
+					spells[heroname][tostring(i)] = {
+						name = spell,
+						scepter = tostring(kv["IsGrantedByScepter"]) == "1",
+						shard = tostring(kv["IsGrantedByShard"]) == "1",
+					}
+				end
+			end
+		end
+		]]
+		local heroinfo = GetUnitKeyValuesByName(heroname)
+		heroes[heroname] = {attribute = heroinfo["AttributePrimary"]}
+		spells[heroname] = _abilitiesShop[heroname]
+	end
+	for heroname, _heroinfo in pairs(LoadKeyValues("scripts/npc/npc_heroes.txt")) do
+		if type(_heroinfo) == "table" and not blockedHeroes[heroname] then
+			AddHeroToList(heroname)
+		end
+	end
+	for heroname, _heroinfo in pairs(LoadKeyValues("scripts/npc/npc_heroes_custom.txt")) do
+		if type(_heroinfo) == "table" and not blockedHeroes[heroname] then
+			AddHeroToList(heroname)
+		end
+	end
+	CustomNetTables:SetTableValue("spells_info", "heroes", heroes)
+	for heroname, herospells in pairs(spells) do
+		CustomNetTables:SetTableValue("spells_info", heroname, herospells)
+	end
+	
+	local bannedPool = CustomNetTables:GetTableValue("spells_info", "banned") or {}
+	bannedPool["abilities"] = bannedPool["abilities"] or {}
+	bannedPool["banAttempts"] = bannedPool["banAttempts"] or {}
+	for i = 0, 11 do
+		bannedPool["banAttempts"][tostring(i)] = 2
+		CustomNetTables:SetTableValue("spells_info", "banned", bannedPool)
+	end
+end
 
 function CustomHeroArenaSpellShop:OnSpellAdded(hero, abilities)
 	-- for _, ability_name in pairs(abilities) do
@@ -13,8 +80,12 @@ function CustomHeroArenaSpellShop:IsSpellAllowed(abilityname)
 	local heroes = CustomNetTables:GetTableValue("spells_info", "heroes")
 	for heroname, _ in pairs(heroes) do
 		local spells = table.values(CustomNetTables:GetTableValue("spells_info", heroname))
-		if table.contains(spells, abilityname) then
-			return true
+		if spells then
+			for _, spell in pairs(spells) do
+				if spell["name"] == abilityname then
+					return true
+				end
+			end
 		end
 	end
 	return false
@@ -23,9 +94,9 @@ end
 function CustomHeroArenaSpellShop:HasLinkenSpell(abilityname)
 	local heroes = CustomNetTables:GetTableValue("spells_info", "heroes")
 	for heroname, _ in pairs(heroes) do
-		local spells = table.values(CustomNetTables:GetTableValue("spells_info", heroname))
+	--	local spells = table.values(CustomNetTables:GetTableValue("spells_info", heroname))
 		local heroinfo = GetUnitKeyValuesByName(heroname)
-		for i=1, (heroinfo["AbilityTalentStart"] or 10)-1 do
+		for i = 1, (heroinfo["AbilityTalentStart"] or 10) - 1 do
 			local spell = heroinfo[tostring("Ability"..i)]
 			if spell == abilityname then
 				return true
@@ -38,9 +109,13 @@ end
 function CustomHeroArenaSpellShop:GetSpellOwner(abilityname)
 	local heroes = CustomNetTables:GetTableValue("spells_info", "heroes")
 	for heroname, _ in pairs(heroes) do
-		local spells = table.values(CustomNetTables:GetTableValue("spells_info", heroname))
-		if table.contains(spells, abilityname) then
-			return heroname
+		local spells = CustomNetTables:GetTableValue("spells_info", heroname)
+		if spells then
+			for _, spell in pairs(spells) do
+				if spell["name"] == abilityname then
+					return true
+				end
+			end
 		end
 	end
 	return "npc_dota_hero_base"
@@ -91,6 +166,7 @@ local function AddSpell(hero, abilityname)
 end
 
 function CustomHeroArenaSpellShop:AddSpell(hero, abilityname)
+	--[[
 	local ability = AddSpell(hero, abilityname)
 	local abilities = {}
 	if ability then
@@ -104,6 +180,7 @@ function CustomHeroArenaSpellShop:AddSpell(hero, abilityname)
 		for _, spell in pairs(linked["all"]) do
 			local abil = AddSpell(hero, spell)
 			if abil then
+				abil.zero_points = true
 				if not abil:IsHidden() then
 					table.insert(abilities, spell)
 				end
@@ -113,6 +190,45 @@ function CustomHeroArenaSpellShop:AddSpell(hero, abilityname)
 		hero:ModifyAbilityPoints(self:GetSpellCost(primary)*(-1))
 	end
 	return abilities
+	]]
+	if not hero:HasAbility(abilityname) then
+		local apCost = self:GetSpellCost(abilityname)
+		if hero:GetAbilityPoints() < apCost then return end
+		local ability = hero:AddAbility(abilityname)
+		if ability then
+			local abilities = {}
+			table.insert(abilities, abilityname)
+			ability:SetLevel(1)
+			hero:ModifyAbilityPoints(self:GetSpellCost(abilityname) * (-1))
+			for heroName, spells in pairs(_abilitiesShop) do
+				for _, spell in pairs(spells) do
+					if spell["name"] == abilityname then
+						local sub = spell["sub"]
+						if sub then
+							local abil = hero:AddAbility(sub)
+							if abil then
+								abil:SetLevel(1)
+								abil:SetHidden(false)
+								table.insert(abilities, sub)
+								abil.zero_points = true
+							end
+						end
+						local sub2 = spell["sub2"]
+						if sub2 then
+							local abil = hero:AddAbility(sub2)
+							if abil then
+								abil:SetLevel(1)
+								abil:SetHidden(false)
+								table.insert(abilities, sub2)
+								abil.zero_points = true
+							end
+						end
+					end
+				end
+			end
+			return abilities
+		end
+	end
 end
 
 local function IsRemovableSpell(ability)
@@ -128,12 +244,27 @@ local function IsRemovableSpell(ability)
 			return "#dota_hud_error_cant_drag_channeling_item"
 		elseif blocking_modifiers[ability:GetAbilityName()] ~= nil and table.length(table.filter(blocking_modifiers[ability:GetAbilityName()], function(_, mod) return ability:GetCaster():FindModifierByNameAndAbility(mod, ability) ~= nil end)) > 0 then
 			return "#dota_hud_error_cant_drag_channeling_item"
+			--[[
+		else
+			if ability:NumModifiersUsingAbility() == 1 then
+				if ability:GetIntrinsicModifierName() ~= nil then
+					local find_intrinsic = ability:GetCaster():FindModifierByName(ability:GetIntrinsicModifierName())
+					if find_intrinsic then
+						find_intrinsic:Destroy()
+					end
+				end
+			end
+			if ability:NumModifiersUsingAbility() > 0 then
+				return "#dota_hud_error_cant_drag_channeling_item"
+			end
+			]]
 		end
 	end
 	return nil
 end
 
 local function RemoveSpell(hero, ability)
+	if not ability then return 0 end
 	if ability:GetAbilityName() == "monkey_king_wukongs_command_lua" then
 		for _, monkey in pairs(ability:GetMonkeys()) do
 			if IsValidEntity(monkey) then
@@ -156,6 +287,9 @@ local function RemoveSpell(hero, ability)
 	end
 	local points = not ability:IsBehavior(DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE) and ability:GetLevel()-1+CustomHeroArenaSpellShop:GetSpellCost(ability:GetAbilityName()) or 0
 	hero:RemoveAbilityByHandle(ability)
+	if ability.zero_points then
+		points = 0
+	end
 	return math.max(points, 0)
 end
 
@@ -168,6 +302,17 @@ function CustomHeroArenaSpellShop:RemoveSpell(hero, ability)
 			return -1
 		end
 	end
+	if ability:GetAbilityName() == "storm_spirit_ball_lightning" then
+		if hero:HasAbility("storm_spirit_galvanized") then
+			PlayerResource:DisplayError(hero:GetPlayerOwnerID(), "#dota_hud_error_ability_is_hidden")
+			return -1
+		end
+	end
+	if ability:GetAbilityName() == "life_stealer_infest" then
+		if hero:HasModifier("modifier_life_stealer_infest") then
+			hero:RemoveModifierByName("modifier_life_stealer_infest")
+		end
+	end
 	local points = 0
 	for _, spell_name in pairs(abilities) do
 		points = points + RemoveSpell(hero, hero:FindAbilityByName(spell_name))
@@ -177,19 +322,21 @@ function CustomHeroArenaSpellShop:RemoveSpell(hero, ability)
 end
 
 function CustomHeroArenaSpellShop:OnSpellBuy(event)
+	if event == nil or event.PlayerID == nil or event.spell == nil then return end
 	if GameRules:IsGamePaused() then return end
+	local bannedPool = CustomNetTables:GetTableValue("spells_info", "banned")
+	if bannedPool["abilities"][event["spell"]] then return end
 	local hero = PlayerResource:GetSelectedHeroEntity(event["PlayerID"])
-	if hero:GetAbilityPoints() > 0 then
-		if (not hero:HasAbility(event["spell"]) and (hero.abilities == nil or not table.contains(hero.abilities, event["spell"]))) and (hero.abilities == nil or table.length(hero.abilities) < MAX_ABILITY_COUNT) then
+	if hero and hero:GetAbilityPoints() > 0 then
+		hero.abilities = hero.abilities or {}
+		if (not hero:HasAbility(event["spell"]) and not table.contains(hero.abilities, event["spell"])) and table.length(hero.abilities) < MAX_ABILITY_COUNT then
 			local heroname = CustomHeroArenaSpellShop:GetSpellOwner(event["spell"])
 			if heroname == "npc_dota_hero_base" then return end
 			local abilities = CustomHeroArenaSpellShop:AddSpell(hero, event["spell"])
 			if abilities == -1 then return end
 			CustomHeroArenaSpellShop:OnSpellAdded(hero, abilities)
-			hero.abilities = hero.abilities ~= nil and table.combine(hero.abilities, abilities) or abilities
-			PrecacheUnitByNameAsync(heroname, function(precacheId)
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event["PlayerID"]), "spellpoints_update", {})
-			end, event["PlayerID"])
+			hero.abilities = table.combine(hero.abilities, abilities) or abilities
+			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event["PlayerID"]), "spellshop_spellpoints_update", {})
 			local scepter_buff = hero:FindModifierByName("modifier_item_ultimate_scepter")
 			if scepter_buff then
 				local scepter_ability = scepter_buff:GetAbility()
@@ -218,60 +365,74 @@ function CustomHeroArenaSpellShop:OnSpellBuy(event)
 end
 
 function CustomHeroArenaSpellShop:OnSpellSell(event)
+	if event == nil or event.PlayerID == nil or event.spell == nil then return end
 	if GameRules:IsGamePaused() then return end
 	local hero = PlayerResource:GetSelectedHeroEntity(event["PlayerID"])
 	local cocktails = table.values(hero:GetItemsByName({"item_spellshop_sell_lua"}, true, true))
-	if hero:HasAbility(event["spell"]) and (table.length(cocktails) > 0 or GameRules:IsCheatMode() or GameRules:GetOptionValue("free_sell") == 1) then
+	if hero:HasAbility(event["spell"]) and (event.free or table.length(cocktails) > 0 or GameRules:IsCheatMode() or GameRules:GetOptionValue("free_sell") == 1) then
 		local ability = hero:FindAbilityByName(event["spell"])
 		local info = CustomHeroArenaSpellShop:RemoveSpell(hero, ability)
 		if info == -1 then return end
 		if not GameRules:IsCheatMode() and GameRules:GetOptionValue("free_sell") ~= 1 then
 			cocktails[1]:SpendCharge(0)
 		end
-		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event["PlayerID"]), "spellpoints_update", {})
-		hero.abilities = hero.abilities ~= nil and table.filter(hero.abilities, function(k, v) return not table.contains(info, v) end) or {}
+		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event["PlayerID"]), "spellshop_spellpoints_update", {})
+		hero.abilities = table.filter(hero.abilities, function(k, v) return not table.contains(info, v) end) or {}
+	end
+end
+
+function CustomHeroArenaSpellShop:OnSpellBan(event)
+	if event == nil or event.PlayerID == nil or event.spell == nil then return end
+	local bannedPool = CustomNetTables:GetTableValue("spells_info", "banned")
+	if bannedPool and bannedPool["banAttempts"][tostring(event.PlayerID)] > 0 then
+		local heroes = CustomNetTables:GetTableValue("spells_info", "heroes")
+		local pass = false
+		local localPool = {}
+		if heroes then
+			for heroname, _ in pairs(heroes) do
+				local abilities = CustomNetTables:GetTableValue("spells_info", heroname)
+				if abilities then
+					for _, ability in pairs(abilities) do
+						if ability["name"] == event.spell and not ability["banned"] then
+							ability["banned"] = true
+							pass = true
+						end
+						if ability["banned"] then
+							table.insert(localPool, ability["name"])
+						end
+					end
+					CustomNetTables:SetTableValue("spells_info", heroname, abilities)
+				end
+			end
+		end
+		if pass then
+			bannedPool["banAttempts"][tostring(event.PlayerID)] = bannedPool["banAttempts"][tostring(event.PlayerID)] - 1
+			for i = 0, 11 do
+				if PlayerResource:IsValidPlayerID(i) then
+					local hero = PlayerResource:GetSelectedHeroEntity(i)
+					if hero then
+						CustomHeroArenaSpellShop:OnSpellSell({
+							PlayerID = i,
+							spell = event.spell
+						})
+					end
+				end
+				CustomNetTables:SetTableValue("spells_info", "banned", bannedPool)
+			end
+		end
+		bannedPool["abilities"] = localPool
+		CustomNetTables:SetTableValue("spells_info", "banned", bannedPool)
+		CustomGameEventManager:Send_ServerToAllClients("spellshop_spellpoints_update", {})
 	end
 end
 
 function CustomHeroArenaSpellShop:OnSpellsSwap(event)
+	if event == nil or event.PlayerID == nil then return end
 	if GameRules:IsGamePaused() then return end
 	local hero = PlayerResource:GetSelectedHeroEntity(event["PlayerID"])
 	local ability1 = hero:GetAbilityByIndex(event["slot1"])
 	local ability2 = hero:GetAbilityByIndex(event["slot2"])
 	if ability1 and ability2 and string.find(ability1:GetAbilityName(), "special_bonus_") == nil and string.find(ability2:GetAbilityName(), "special_bonus_") == nil then
 		hero:SwapAbilities(ability1:GetAbilityName(), ability2:GetAbilityName(), not ability1:IsHidden(), not ability2:IsHidden())
-	end
-end
-
-function CustomHeroArenaSpellShop:Init()
-	local spells = {}
-	local heroes = {}
-	local function AddHeroToList(heroname)
-		local heroinfo = GetUnitKeyValuesByName(heroname)
-		heroes[heroname] = {attribute=heroinfo["AttributePrimary"]}
-		spells[heroname] = spells[heroname] or {}
-		for i=1, (heroinfo["AbilityTalentStart"] or 10)-1 do
-			local spell = heroinfo[tostring("Ability"..i)]
-			if not table.contains({"", "generic_hidden"}, spell) then
-				local kv = GetAbilityKeyValuesByName(spell)
-				if kv ~= nil and (string.find(kv["AbilityBehavior"], "DOTA_ABILITY_BEHAVIOR_HIDDEN") == nil or string.find(kv["AbilityBehavior"], "DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES") ~= nil) and tostring(kv["Innate"]) ~= "1" then
-					spells[heroname][tostring(i)] = spell
-				end
-			end
-		end
-	end
-	for heroname, _heroinfo in pairs(LoadKeyValues("scripts/npc/npc_heroes.txt")) do
-		if type(_heroinfo) == "table" and not table.contains({"npc_dota_hero_target_dummy", "npc_dota_hero_base"}, heroname) then
-			AddHeroToList(heroname)
-		end
-	end
-	for heroname, _heroinfo in pairs(LoadKeyValues("scripts/npc/npc_heroes_custom.txt")) do
-		if type(_heroinfo) == "table" then
-			AddHeroToList(heroname)
-		end
-	end
-	CustomNetTables:SetTableValue("spells_info", "heroes", heroes)
-	for heroname, herospells in pairs(spells) do
-		CustomNetTables:SetTableValue("spells_info", heroname, herospells)
 	end
 end

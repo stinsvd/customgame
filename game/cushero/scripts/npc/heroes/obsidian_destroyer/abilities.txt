@@ -4,56 +4,60 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/heroes/obsidian_destroyer"
-		"AbilityTextureName"			"obsidian_destroyer_equilibrium_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"obsidian_destroyer_equilibrium"
+		"MaxLevel"						"4"
+		"HasScepterUpgrade"				"1"
 		"AbilityCooldown"				"28"
 		"AbilityManaCost"				"50"
-		"HasScepterUpgrade"				"1"
-		"AbilityTextureName"			"obsidian_destroyer_equilibrium"
 		"AbilityValues"
 		{
 			"mana_steal"				"16 24 32 40"
 			"mana_steal_cap_pct"		"15"
 			"mana_steal_active"
 			{
-				"value"					"80 115 150 185"
-				"RequiresScepter"		"1"
+				"value"						"0"
+				"special_bonus_scepter"		"80 115 150 185"
+				"RequiresScepter"			"1"
 			}
 			"movement_slow"
 			{
-				"value"					"-44 -56 -68 -80"
-				"RequiresScepter"		"1"
+				"value"						"0"
+				"special_bonus_scepter"		"44 56 68 80"
+				"RequiresScepter"			"1"
 			}
 			"slow_duration"
 			{
-				"value"					"2"
-				"RequiresScepter"		"1"
+				"value"						"0"
+				"special_bonus_scepter"		"2"
+				"RequiresScepter"			"1"
 			}
 			"duration"
 			{
-				"value"					"5.5"
-				"RequiresScepter"		"1"
+				"value"						"0"
+				"special_bonus_scepter"		"5.5"
+				"RequiresScepter"			"1"
 			}
 			"mana_increase_chance"
 			{
-				"value"					"0"
-				"special_bonus_facet_obsidian_destroyer_obsidian_decimator" "=20"
+				"value"															"0"
+				"special_bonus_facet_obsidian_destroyer_obsidian_decimator"		"=20"
 			}
 			"mana_increase"
 			{
-				"value"					"0"
-				"special_bonus_facet_obsidian_destroyer_obsidian_decimator"	"=2"
+				"value"															"0"
+				"special_bonus_facet_obsidian_destroyer_obsidian_decimator"		"=2"
 			}
 			"mana_increase_duration"
 			{
-				"value"					"0"
-				"special_bonus_facet_obsidian_destroyer_obsidian_decimator"	"=5.5"
+				"value"															"0"
+				"special_bonus_facet_obsidian_destroyer_obsidian_decimator"		"=5.5"
 			}
 			"mana_as_ms"
 			{
-				"special_bonus_unique_outworld_devourer_3"	"=1.5"
+				"special_bonus_unique_outworld_devourer_3"		"=1.5"
 			}
 		}
 	}

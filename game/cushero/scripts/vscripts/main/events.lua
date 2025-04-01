@@ -15,6 +15,7 @@ function CustomHeroArenaEvents:Init()
 	local events_manager = {
 		{"spellshop_spell_buy", "OnSpellBuy", CustomHeroArenaSpellShop},
 		{"spellshop_spell_sell", "OnSpellSell", CustomHeroArenaSpellShop},
+		{"spellshop_spell_ban", "OnSpellBan", CustomHeroArenaSpellShop},
 		{"swap_abilities", "OnSpellsSwap", CustomHeroArenaSpellShop},
 		{"loading_screen_choose_option", "OnChooseOption"},
 	}
@@ -236,6 +237,7 @@ function CustomHeroArenaEvents:OnPlayerChat(event)
 	local text = event["text"]
 	local userID = event["userid"]
 	local npc = PlayerResource:GetSelectedHeroEntity(playerID)
+	--[[
 	if string.startswith(text, "!") then
 		if text == "!fixduel" then
 			if npc:IsTrueHero() then
@@ -264,6 +266,7 @@ function CustomHeroArenaEvents:OnPlayerChat(event)
 			GameRules:SendCustomMessage(tostring("[DEBUG] Entity count: "..#units), 0, 0)
 		end
 	end
+	]]
 end
 
 function CustomHeroArenaEvents:OnRuneActivated(event)
@@ -304,6 +307,12 @@ function CustomHeroArenaEvents:OnAbilityUsed(event)
 	caster._last_cast_target = target ~= nil and target:entindex() or -1
 	if IsValidEntity(target) and target:GetTeamNumber() == DOTA_TEAM_NEUTRALS and not target:IsBoss() and target:AI() ~= nil then
 		target:AI():OnAbilityCast(caster, ability)
+	end
+	if abilityname == "skeleton_king_reincarnation" and caster:HasModifier("modifier_dazzle_shallow_grave") then
+		caster:RemoveModifierByName("modifier_dazzle_shallow_grave")
+	end
+	if abilityname == "skeleton_king_reincarnation" and caster:HasModifier("modifier_troll_warlord_battle_trance") then
+		caster:RemoveModifierByName("modifier_troll_warlord_battle_trance")
 	end
 end
 

@@ -73,7 +73,7 @@ function modifier_obsidian_destroyer_equilibrium_lua_debuff:IsPurgable() return 
 function modifier_obsidian_destroyer_equilibrium_lua_debuff:GetStatusEffectName() return "particles/status_fx/status_effect_obsidian_matter_debuff.vpcf" end
 function modifier_obsidian_destroyer_equilibrium_lua_debuff:DeclareFunctions() return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE} end
 function modifier_obsidian_destroyer_equilibrium_lua_debuff:OnCreated()
-	self.slow = self:GetAbility():GetSpecialValueFor("movement_slow")
+	self.slow = self:GetAbility():GetSpecialValueFor("movement_slow") * (-1)
 end
 function modifier_obsidian_destroyer_equilibrium_lua_debuff:OnRefresh()
 	self:OnCreated()

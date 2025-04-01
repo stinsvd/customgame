@@ -12,7 +12,7 @@ end
 local function ProcessOrderFilter(fc, event, unit, ...)
 	local new_unit = fc(event, unit, ...)
 	if not new_unit then
-		index = tonumber(table.find(event["units"], unit:entindex()))
+		local index = tonumber(table.find(event["units"], unit:entindex()))
 		for i=index, table.length(event["units"])-1 do
 			event["units"][tostring(i)] = event["units"][tostring(i+1)]
 		end
@@ -262,7 +262,7 @@ function CustomHeroArenaFilters:OrderFilter(event)
 		and ProcessOrderFilter(OrderToggleFilter, event, npc)
 		and ProcessOrderFilter(OrderFakeInvulnerableFilter, event, npc)
 		and ProcessOrderFilter(OrderTPPreventFilter, event, npc)
-		and ProcessOrderFilter(OrderSlotFilter, event, npc)
+	--	and ProcessOrderFilter(OrderSlotFilter, event, npc)
 		and ProcessOrderFilter(OrderBadCastFilter, event, npc)
 		and ProcessOrderFilter(OrderRightClickFilter, event, npc)
 		and ProcessOrderFilter(OrderModifierFilter, event, npc) then

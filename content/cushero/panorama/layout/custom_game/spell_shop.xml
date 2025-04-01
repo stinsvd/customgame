@@ -10,8 +10,15 @@
 	<snippets>
 	</snippets>
 	<Panel class="SpellShopRoot" hittest="false">
-		<Panel id="SpellShopBackground" hittest="true">
-			<Label id="SpellShopTitle" text="Spell Shop" hittest="false" />
+		<Panel id="SpellShopBackground" class="SpellShopBackground ToggleOpen" hittest="true" >
+			<Panel id="SpellShopTitlePanel" hittest="false" >
+		<!--		<Label id="SpellShopTitle" text="Spell Shop" hittest="false" />		-->
+				<Panel id="SpellShopBannedRoot" hittest="false" >
+					<Label text="Bans:" hittest="false" />
+					<Panel id="SpellShopBanned" hittest="false" />
+				</Panel>
+				<Button class="CloseButton" onactivate="ToggleOpen(true)" hittest="true" />
+			</Panel>
 			<Panel id="SpellShopAbilitiesContainer" hittest="false">
 				<Panel id="SpellsHeroSelection" hittest="false" />
 			</Panel>
@@ -24,6 +31,9 @@
 					<Button id="SellSpell" class="SpellButtons" onactivate="InteractSpell('sell')" hittest="true">
 						<Label text="Sell" hittest="false" />
 					</Button>
+					<Button id="BanSpell" class="SpellButtons" onactivate="InteractSpell('ban')" hittest="true">
+						<Label text="Ban" hittest="false" />
+					</Button>
 				</Panel>
 				<Panel id="SpellShopSwapContainer">
 					<!-- <Label id="SpellShopSwapTitle" text="Swap skills:" /> -->
@@ -32,7 +42,7 @@
 			</Panel>
 		</Panel>
 		<Panel id="SpellShopButtons" hittest="false">
-			<Button id="SpellShopOpen" class="ButtonBevel" onactivate="GameUI.SmoothToggle($('#SpellShopBackground'))" hittest="true">
+			<Button id="SpellShopOpen" class="ButtonBevel" onactivate="ToggleOpen()" hittest="true">
 				<Label text="Spell Shop" hittest="false" />
 			</Button>
 		</Panel>

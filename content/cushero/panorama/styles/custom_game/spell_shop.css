@@ -4,7 +4,7 @@
 }
 
 #SpellShopButtons {
-    vertical-align: bottom;
+	vertical-align: bottom;
 	position: 0 -244px 0;
 	width: 244px;
 	height: 36px;
@@ -24,15 +24,16 @@
 #SpellShopOpen {
 	height: 100%;
 	width: 100%;
-    background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_inrange_psd.vtex");
-	background-repeat: no-repeat;
-	background-size: 100%;
-    brightness: 1.0;
-    box-shadow: #00000055 0 0 2px 2px;
-    transition-property: background-image;
-    transition-duration: .18s;
-    transition-timing-function: ease-in-out;
-    tooltip-position: top;
+	background-color: gradient(linear, 0% 100%, 0% 0%, from(rgb(255, 196, 0)), to(rgb(92, 63, 0)));
+//	background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_inrange_psd.vtex");
+//	background-repeat: no-repeat;
+//	background-size: 100%;
+	brightness: 1.0;
+	box-shadow: #00000055 0 0 2px 2px;
+	transition-property: background-color;
+	transition-duration: .18s;
+	transition-timing-function: ease-in-out;
+	tooltip-position: top;
 }
 
 #SpellShopOpen Label {
@@ -40,21 +41,45 @@
 }
 
 #SpellShopOpen:hover {
-    background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_hover_psd.vtex");
+	background-color: gradient(linear, 0% 100%, 0% 0%, from(rgb(169, 182, 199)), to(rgb(52, 56, 61)));
+//	background-image: url("s2r://panorama/images/hud/reborn/shop_launcher_button_hover_psd.vtex");
 }
 
-#SpellShopBackground {
+.SpellShopBackground {
 	width: 70%;
 	height: 75%;
-	background-color: #161616;
-	horizontal-align: center;
-	vertical-align: center;
-	z-index: 1;
-	opacity: 0.95;
+	background-color: rgba(23, 23, 23, 0.95);
+	border: 1px solid rgba(207, 170, 49, 0.3);
+	align: center center;
+	box-shadow: #00000055 0 0 2px 2px;
+	ui-scale: 100% 100% 100%;
 	flow-children: down;
-	visibility: collapse;
-	padding-top: 15px;
+	padding-top: 5px;
 	padding-bottom: 15px;
+	transition-property: opacity, ui-scale;
+	transition-duration: .18s;
+	z-index: 1;
+}
+
+.CloseButton {
+	width: 30px;
+	height: 30px;
+	wash-color: #888888;
+	horizontal-align: right;
+	background-image: url("s2r://panorama/images/control_icons/x_close_grey_psd.vtex");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	ignore-parent-flow: true;
+	margin: 4px;
+	margin-right: 8px;
+	transition-property: wash-color, pre-transform-scale2d, background-color;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in;
+}
+
+.ToggleOpen {
+	opacity: 0;
 }
 
 .AspectRatio4x3 #SpellShopBackground {
@@ -63,6 +88,32 @@
 
 .AspectRatio16x10 #SpellShopBackground {
 	width: 78%;
+}
+
+#SpellShopTitlePanel {
+	width: 100%;
+}
+
+#SpellShopBannedRoot {
+	padding-left: 5px;
+	flow-children: right;
+}
+#SpellShopBannedRoot Label {
+	vertical-align: center;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	text-shadow: 1px 1px 1px 1.0 white;
+}
+
+#SpellShopBanned {
+	padding: 5px;
+	flow-children: right;
+}
+#SpellShopBanned .SpellsSpellIcon {
+	width: 35px;
+	height: 35px;
+	margin: 2px;
 }
 
 #SpellShopTitle {
@@ -77,6 +128,7 @@
 #SpellShopAbilitiesContainer {
 	height: 70%;
 	width: 100%;
+//	margin-top: 4%;
 	flow-children: down;
 }
 
@@ -90,7 +142,6 @@
 }
 
 .SpellsHeroSelection {
-	margin-top: 4%;
 	flow-children: right-wrap;
 	width: fill-parent-flow(1.0);
 	height: 100%;
@@ -104,8 +155,8 @@
 	width: 51px;
 	height: 83px;
 	border: 5px solid #00000000;
-    transition-property: border;
-    transition-duration: .2s;
+	transition-property: border;
+	transition-duration: .2s;
 }
 .SpellsHeroIcon:hover {
 	border: -2px solid #ffffff00;
@@ -126,10 +177,20 @@
 	horizontal-align: center;
 }
 
+.SpellsSpellContainer {
+	width: 64px;
+	height: 64px;
+	margin: 2px;
+	border: 2px solid black;
+	transition-property: border;
+	transition-duration: .2s;
+}
 .SpellsSpellIcon {
 	width: 64px;
 	height: 64px;
-	border: 2px solid black;
+//	border: 2px solid black;
+	transition-property: border;
+	transition-duration: .2s;
 }
 
 .SpellsSpellIcon.Selected:not(.Disabled) {
@@ -141,9 +202,31 @@
 	brightness: 0.5;
 }
 
+.Banned {
+	wash-color: rgba(255, 0, 0, 0.533);
+	box-shadow: inset rgba(83, 8, 8, 0.8) 0px 0px 10px 1px;
+	saturation: 0.5;
+	brightness: 0.6;
+}
+
 .SpellsSpellIcon.Disabled {
 	saturation: 0.0;
 	brightness: 0.1;
+}
+
+.AghsStatusScepter {
+	width: 64px;
+	height: 64px;
+	border: 1px solid rgb(0, 45, 87);
+	background-color: rgb(41, 102, 160);
+	transform: rotateZ(45deg) translateX(40px) translateY(-40px);
+}
+.AghsStatusShard {
+	width: 64px;
+	height: 64px;
+	border: 1px solid rgb(0, 45, 56);
+	background-color: rgb(0, 204, 255);
+	transform: rotateZ(45deg) translateX(40px) translateY(40px);
 }
 
 #SpellsSpellButtons {
@@ -156,10 +239,11 @@
 	min-width: 100px;
 	min-height: 50px;
 	brightness: 0.75;
-	background-color: #9d1400;
-	border: 5px solid black;
-    transition-property: brightness;
-    transition-duration: .2s;
+	margin: 0px 5px 0px 5px;
+	background-color: rgb(157, 20, 0);
+	border: 2px solid rgb(39, 5, 0);
+	transition-property: brightness;
+	transition-duration: .2s;
 }
 .SpellButtons:hover {
 	brightness: 1.2;

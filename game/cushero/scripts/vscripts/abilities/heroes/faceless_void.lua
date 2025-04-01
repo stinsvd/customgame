@@ -4,12 +4,26 @@ faceless_void_time_lock_lua = faceless_void_time_lock_lua or class(ability_lua_b
 function faceless_void_time_lock_lua:GetIntrinsicModifierName() return "modifier_faceless_void_time_lock_lua" end
 function faceless_void_time_lock_lua:TimeLock(target)
 	target:AddNewModifier(self:GetCaster(), self, "modifier_bashed", {duration=target:IsHero() and self:GetSpecialValueFor("duration") or self:GetSpecialValueFor("duration_creep")})
-	Timers:CreateTimer({endTime=self:GetSpecialValueFor("delay"), callback=function()
-		ApplyDamage({attacker=self:GetCaster(), victim=target, damage=self:GetCaster():GetAverageTrueAttackDamage(nil), damage_type=DAMAGE_TYPE_PHYSICAL, damage_flags=DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL, ability=nil})
+	Timers:CreateTimer({endTime=self:GetSpecialValueFor("delay"), callback = function()
 		if RollPseudoRandomPercentage(self:GetSpecialValueFor("chance_pct"), self:entindex(), self:GetCaster()) then
-			local damage = self:TimeLock(target)
-			ApplyDamage({attacker=self:GetCaster(), victim=target, damage=damage, damage_type=self:GetAbilityDamageType(), damage_flags=DOTA_DAMAGE_FLAG_NONE, ability=self})
+			if target and target:IsAlive() then
+				local damage = self:TimeLock(target)
+				ApplyDamage({
+					attacker = self:GetCaster(),
+					victim = target,
+					damage = damage,
+					damage_type = self:GetAbilityDamageType(),
+					damage_flags = DOTA_DAMAGE_FLAG_NONE,
+				})
+			end
 		end
+		ApplyDamage({
+			attacker = self:GetCaster(),
+			victim = target,
+			damage = self:GetCaster():GetAverageTrueAttackDamage(nil),
+			damage_type = DAMAGE_TYPE_PHYSICAL,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
+		})
 	end}, nil, self)
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_time_lock_bash.vpcf", PATTACH_CUSTOMORIGIN, nil)
 	ParticleManager:SetParticleControl(fx, 0, target:GetAbsOrigin())

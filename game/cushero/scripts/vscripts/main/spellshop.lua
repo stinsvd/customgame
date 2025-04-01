@@ -342,12 +342,14 @@ function CustomHeroArenaSpellShop:OnSpellBuy(event)
 			CustomHeroArenaSpellShop:OnSpellAdded(hero, abilities)
 		--	hero.abilities = table.combine(hero.abilities, abilities) or abilities
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event["PlayerID"]), "spellshop_spellpoints_update", {})
+			--[[
 			local scepter_buff = hero:FindModifierByName("modifier_item_ultimate_scepter")
 			if scepter_buff then
 				local scepter_ability = scepter_buff:GetAbility()
 				scepter_buff:Destroy()
 				hero:AddNewModifier(hero, scepter_ability, "modifier_item_ultimate_scepter", {})
 			end
+			]]
 			if hero:HasModifier("modifier_item_ultimate_scepter_consumed") then
 				hero:RemoveModifierByName("modifier_item_ultimate_scepter_consumed")
 				hero:AddNewModifier(hero, nil, "modifier_item_ultimate_scepter_consumed", {})

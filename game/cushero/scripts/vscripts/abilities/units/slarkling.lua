@@ -91,22 +91,31 @@ function modifier_slarkling_pounce_lua:OnDestroy()
 	end
 end
 function modifier_slarkling_pounce_lua:OnIntervalThink()
-	local target = FindUnitsInRadius(self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self:GetAbility():GetSpecialValueFor("pounce_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)[1]
+	if not IsServer() then return end
+	local owner = self:GetParent()
+	local target = FindUnitsInRadius(owner:GetTeamNumber(), owner:GetOrigin(), nil, self:GetAbility():GetSpecialValueFor("pounce_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, FIND_CLOSEST, false)[1]
 	if not target then return end
-	target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_slarkling_pounce_lua_debuff", {duration = self:GetAbility():GetSpecialValueFor("leash_duration"), radius = self:GetAbility():GetSpecialValueFor("leash_radius"), purgable = false})
+	target:AddNewModifier(owner, self:GetAbility(), "modifier_slarkling_pounce_lua_debuff", {duration = self:GetAbility():GetSpecialValueFor("leash_duration"), radius = self:GetAbility():GetSpecialValueFor("leash_radius"), purgable = false})
 	target:EmitSound("Hero_Slark.Pounce.Impact")
 	if target:IsHero() and not target:IsIllusion() then
-		local essence_shift = self:GetParent():FindAbilityByName("slarkling_essence_shift_lua") or self:GetParent():FindAbilityByName("boss_slarkling_essence_shift_lua")
-		local essence_shift_buff = self:GetParent():FindModifierByNameAndCaster("modifier_slarkling_essence_shift_lua", self:GetParent())
+		local essence_shift = owner:FindAbilityByName("slarkling_essence_shift_lua") or owner:FindAbilityByName("boss_slarkling_essence_shift_lua")
+		local essence_shift_buff = owner:FindModifierByNameAndCaster("modifier_slarkling_essence_shift_lua", owner)
 		if essence_shift and essence_shift_buff then
 			for i=1, self:GetAbility():GetSpecialValueFor("essence_stacks") do
-				target:AddNewModifier(self:GetParent(), essence_shift, "modifier_slarkling_essence_shift_lua_debuff", {duration = essence_shift:GetSpecialValueFor("duration"), stack_duration = essence_shift:GetSpecialValueFor("duration")})
+				target:AddNewModifier(owner, essence_shift, "modifier_slarkling_essence_shift_lua_debuff", {duration = essence_shift:GetSpecialValueFor("duration"), stack_duration = essence_shift:GetSpecialValueFor("duration")})
 				essence_shift_buff:AddStack(essence_shift:GetSpecialValueFor("duration"))
 			end
 		end
 	end
-	ApplyDamage({victim=target, attacker=self:GetParent(), damage=self:GetAbility():GetSpecialValueFor("pounce_damage"), damage_type=self:GetAbility():GetAbilityDamageType(), damage_flags=DOTA_DAMAGE_FLAG_NONE, ability=self:GetAbility()})
-	self:GetParent():SetAttacking(target)
+	ApplyDamage({
+		victim = target,
+		attacker = owner,
+		ability = self:GetAbility(),
+		damage = self:GetAbility():GetSpecialValueFor("pounce_damage"),
+		damage_type = self:GetAbility():GetAbilityDamageType(),
+		damage_flags = DOTA_DAMAGE_FLAG_NONE,
+	})
+	owner:SetAttacking(target)
 	self:Destroy()
 end
 
@@ -164,6 +173,14 @@ function modifier_slarkling_essence_shift_lua:GetModifierProcAttack_Feedback(kv)
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_slark/slark_essence_shift.vpcf", PATTACH_ABSORIGIN_FOLLOW, kv.target)
 	ParticleManager:SetParticleControl(fx, 1, kv.attacker:GetOrigin() + Vector(0, 0, 64))
 	ParticleManager:ReleaseParticleIndex(fx)
+end
+function modifier_slarkling_essence_shift_lua:AddStack(duration)
+	if not IsServer() then return end
+	self:IncrementStackCount()
+	Timers:CreateTimer(duration, function()
+		if not self or self:IsNull() then return end
+		self:DecrementStackCount()
+	end)
 end
 
 modifier_slarkling_essence_shift_lua_debuff = modifier_slarkling_essence_shift_lua_debuff or class({})

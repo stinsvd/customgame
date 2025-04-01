@@ -223,6 +223,7 @@ function table.merge_deep(t1, t2)
 	return t
 end
 function table.combine(t1, t2)
+	if not t1 or not t2 then return end
 	local t = table.copy(t1)
 	for k, v in pairs(t2) do
 		table.insert(t, v)

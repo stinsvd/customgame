@@ -196,6 +196,8 @@ function CustomHeroArenaSpellShop:AddSpell(hero, abilityname)
 		if hero:GetAbilityPoints() < apCost then return end
 		local ability = hero:AddAbility(abilityname)
 		if ability then
+			hero.abilities = hero.abilities or {}
+			table.insert(hero.abilities, abilityname)
 			local abilities = {}
 			table.insert(abilities, abilityname)
 			ability:SetLevel(1)
@@ -207,6 +209,7 @@ function CustomHeroArenaSpellShop:AddSpell(hero, abilityname)
 						if sub then
 							local abil = hero:AddAbility(sub)
 							if abil then
+								table.insert(hero.abilities, sub)
 								abil:SetLevel(1)
 								abil:SetHidden(false)
 								table.insert(abilities, sub)
@@ -217,6 +220,7 @@ function CustomHeroArenaSpellShop:AddSpell(hero, abilityname)
 						if sub2 then
 							local abil = hero:AddAbility(sub2)
 							if abil then
+								table.insert(hero.abilities, sub2)
 								abil:SetLevel(1)
 								abil:SetHidden(false)
 								table.insert(abilities, sub2)
@@ -236,6 +240,7 @@ local function IsRemovableSpell(ability)
 		["snapfire_mortimer_kisses"] = {"modifier_snapfire_mortimer_kisses"},
 	}
 	if ability ~= nil then
+		if ability.banned then return end
 		if not ability:IsCooldownReady() then
 			return "#dota_hud_error_ability_in_cooldown"
 		elseif ability:GetToggleState() then
@@ -335,7 +340,7 @@ function CustomHeroArenaSpellShop:OnSpellBuy(event)
 			local abilities = CustomHeroArenaSpellShop:AddSpell(hero, event["spell"])
 			if abilities == -1 then return end
 			CustomHeroArenaSpellShop:OnSpellAdded(hero, abilities)
-			hero.abilities = table.combine(hero.abilities, abilities) or abilities
+		--	hero.abilities = table.combine(hero.abilities, abilities) or abilities
 			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(event["PlayerID"]), "spellshop_spellpoints_update", {})
 			local scepter_buff = hero:FindModifierByName("modifier_item_ultimate_scepter")
 			if scepter_buff then
@@ -371,6 +376,9 @@ function CustomHeroArenaSpellShop:OnSpellSell(event)
 	local cocktails = table.values(hero:GetItemsByName({"item_spellshop_sell_lua"}, true, true))
 	if hero:HasAbility(event["spell"]) and (event.free or table.length(cocktails) > 0 or GameRules:IsCheatMode() or GameRules:GetOptionValue("free_sell") == 1) then
 		local ability = hero:FindAbilityByName(event["spell"])
+		if event.ban then
+			ability.banned = true
+		end
 		local info = CustomHeroArenaSpellShop:RemoveSpell(hero, ability)
 		if info == -1 then return end
 		if not GameRules:IsCheatMode() and GameRules:GetOptionValue("free_sell") ~= 1 then
@@ -413,7 +421,8 @@ function CustomHeroArenaSpellShop:OnSpellBan(event)
 					if hero then
 						CustomHeroArenaSpellShop:OnSpellSell({
 							PlayerID = i,
-							spell = event.spell
+							spell = event.spell,
+							ban = true,
 						})
 					end
 				end

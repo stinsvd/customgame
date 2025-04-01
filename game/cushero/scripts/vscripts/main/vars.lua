@@ -2046,6 +2046,7 @@ _G._abilitiesShop = {
 		},
 		["3"] = {
 			name = "terrorblade_demon_zeal",
+			shard = true,
 		},
 		["4"] = {
 			name = "terrorblade_terror_wave",

@@ -7,11 +7,6 @@ local precache_data = {
 	"particles/ui_mouseactions/range_finder_cone.vpcf",
 	"particles/units/heroes/hero_rattletrap/clock_overclock_buff_recharge.vpcf",
 	"particles/fireblend_explosion.vpcf",
-	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts",
-	"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts",
-	"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts",
-	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts",
-	"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts",
 	"particles/void_stick/void_stick_pull.vpcf",
 	"particles/units/heroes/hero_medusa/medusa_mana_shield.vpcf",
 	"particles/units/heroes/hero_disruptor/disruptor_glimpse_travel.vpcf",
@@ -21,6 +16,25 @@ local precache_data = {
 	"particles/status_fx/status_effect_stickynapalm.vpcf",
 	"particles/units/heroes/hero_batrider/batrider_stickynapalm_stack.vpcf",
 	"particles/units/heroes/hero_batrider/batrider_napalm_damage_debuff.vpcf",
+
+	"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts",
+	"soundevents/game_sounds_heroes/game_sounds_jakiro.vsndevts",
+	"soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts",
+	"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts",
+	"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts",
+
+	"models/heroes/brewmaster/brewmaster_firespirit.vmdl",
+	"models/heroes/brewmaster/brewmaster_windspirit.vmdl",
+	"models/heroes/brewmaster/brewmaster_earthspirit.vmdl",
+	"models/heroes/brewmaster/brewmaster_voidspirit.vmdl",
+	"models/heroes/nerubian_assassin/mound.vmdl",
+	"models/heroes/dragon_knight/dragon_knight_dragon.vmdl",
+	"models/heroes/muerta/muerta_ult.vmdl",
+	"models/heroes/lycan/lycan_wolf.vmdl",
+	"models/heroes/terrorblade/demon.vmdl",
+	"models/heroes/undying/undying_flesh_golem.vmdl",
+	"models/heroes/visage/visage_familiar.vmdl",
+	"models/heroes/lone_druid/spirit_bear.vmdl",
 }
 local units_kv = LoadKeyValues("scripts/npc/npc_units_custom.txt")
 local real_asset = {

@@ -411,8 +411,8 @@ function CustomHeroArenaFilters:GoldFilter(event)
 	if gold > 0 then
 		if table.contains({DOTA_ModifyGold_CreepKill, DOTA_ModifyGold_NeutralKill, DOTA_ModifyGold_BountyRune}, reason) then
 			local team_networths = {}
-			for _, team in pairs(PlayerResource:GetTeams()) do
-				team_networths[team] = table.sum(PlayerResource:GetNetWorthInTeam(team))
+			for _, pTeam in pairs(PlayerResource:GetTeams()) do
+				team_networths[pTeam] = table.sum(PlayerResource:GetNetWorthInTeam(pTeam))
 			end
 			local max_networth = table.max(team_networths)
 			local max_networth_team = table.find(team_networths, max_networth)

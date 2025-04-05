@@ -129,12 +129,16 @@ function CustomHeroArenaSpellShop:GetSpellCost(abilityname)
 	return 1
 end
 
-local function GetLinkedAbilities(ability, filter)
+local function GetLinkedAbilities(ability)	--,filter
+	local abilityname = ability:GetAbilityName()
+	local abilities = {}
+	--[[
 	local kv = ability:GetAbilityKeyValues()
 	local abilities = {
 		primary = {},
 		secondary = {},
 		linked = {},
+		sub = {},
 	}
 	if ability:GetAssociatedPrimaryAbilities() ~= nil then
 		for _, spell in pairs(string.split(ability:GetAssociatedPrimaryAbilities(), ";")) do
@@ -155,7 +159,23 @@ local function GetLinkedAbilities(ability, filter)
 			table.insert(abilities["linked"], kv["LinkedAbility"])
 		end
 	end
-	abilities["all"] = table.open(table.values(abilities))
+	]]
+	for heroName, spells in pairs(_abilitiesShop) do
+		for _, spell in pairs(spells) do
+			if spell["name"] == abilityname then
+				table.insert(abilities, abilityname)
+				local sub = spell["sub"]
+				if sub then
+					table.insert(abilities, sub)
+				end
+				local sub2 = spell["sub2"]
+				if sub2 then
+					table.insert(abilities, sub2)
+				end
+			end
+		end
+	end
+--	abilities["all"] = table.open(table.values(abilities))
 	return abilities
 end
 
@@ -299,7 +319,7 @@ local function RemoveSpell(hero, ability)
 end
 
 function CustomHeroArenaSpellShop:RemoveSpell(hero, ability)
-	local abilities = table.combine({ability:GetAbilityName()}, GetLinkedAbilities(ability, function(spell) return hero:HasAbility(spell) end)["all"])
+	local abilities = GetLinkedAbilities(ability)--table.combine({ability:GetAbilityName()}, GetLinkedAbilities(ability, function(spell) return hero:HasAbility(spell) end))
 	for _, spell_name in pairs(abilities) do
 		local error = IsRemovableSpell(hero:FindAbilityByName(spell_name))
 		if error ~= nil then

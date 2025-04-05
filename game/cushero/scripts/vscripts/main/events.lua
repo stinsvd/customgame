@@ -83,9 +83,9 @@ function CustomHeroArenaEvents:OnNPCSpawned(event)
 				end
 			end
 		elseif npc:IsIllusion() then
-			Timers:CreateTimer({endTime=FrameTime()*2, callback=function()
+			Timers:CreateTimer(FrameTime()*2, function()
 				npc:CopyAbilities()
-			end}, nil, self)
+			end)
 		end
 		if npc:IsHero() then
 			npc:AddNewModifier(npc, nil, "modifier_global_override_lua", {})

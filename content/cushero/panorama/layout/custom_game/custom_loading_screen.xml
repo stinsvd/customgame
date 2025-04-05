@@ -3,24 +3,7 @@
 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
 		<include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
 	</styles>
-	<scripts>
-		<include src="file://{resources}/scripts/custom_game/custom_loading_screen.js" />
-	</scripts>
 	<Panel class="AddonLoadingRoot" hittest="false">
-		<Image id="CustomBG" src="file://{images}/custom_game/loading_screen/custom_bg.png" scaling="stretch-to-fit-preserve-aspect" hittest="false"/>
-	<!--	<Panel id="DeveloperPanel" hittest="false">
-			<DOTAAvatarImage id="DeveloperAvatar" accountid="178516379" hittest="true" hittestchildren="true"/>
-			<DOTAUserName id="DeveloperName" accountid="178516379" hittest="true" hittestchildren="true"/>
-		</Panel>    -->
-		<Panel id="HostVotingPanel" hittest="false" class="HostOnly AfterAllLoading">
-			<Panel id="KillLimit" class="Vote" hittest="false">
-				<Label id="Title" text="Choose kill limit" hittest="false" />
-				<Panel id="Options" hittest="false" />
-			</Panel>
-			<Panel id="FreeSell" class="Vote" hittest="false">
-				<Label id="Title" text="Free spells sell" hittest="false" />
-				<Panel id="Options" hittest="false" />
-			</Panel>
-		</Panel>
+		<Image id="CustomBG" src="file://{images}/custom_game/loading_screen/custom_bg.png" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
 	</Panel>
 </root>

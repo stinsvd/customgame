@@ -167,4 +167,28 @@
 			"magic_resist_pct_tooltip_limit" "25"
 		}
 	}
+	
+// Ursa: Fury Swipes
+	"urs_fury_swipes_spell"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/ursa"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"ursa_fury_swipes"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"max_stacks"				"8 12 16 20"
+			"bonus_reset_time"
+			{
+				"value"								"8 12 16 20"
+				"special_bonus_unique_ursa_4"		"+12"
+			}
+			"spell_dmg_per_stack"		"1 2 3 4"
+		}
+		"AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+	}
 }

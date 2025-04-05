@@ -1,4 +1,4 @@
-const OPTIONS = {
+let OPTIONS = {
 	"kill_limit": {
 		"panel": "KillLimit",
 		"options": [
@@ -7,7 +7,7 @@ const OPTIONS = {
 			["100", "100", true],
 			["150", "150"],
 			["200", "200"],
-			["0", "  ∞  "],
+			["0", "Unlimited"],
 		],
 	},
 	"free_sell": {
@@ -30,18 +30,18 @@ function SelectOption(option, value, parent) {
 function Init() {
 	PostInit();
 
-	for (const [id, info] of Object.entries(OPTIONS)) {
-		const options_panel = $("#HostVotingPanel").FindChildTraverse(info["panel"]).FindChildTraverse("Options");
+	for (let [id, info] of Object.entries(OPTIONS)) {
+		let options_panel = $("#HostVotingPanel").FindChildTraverse(info["panel"]).FindChildTraverse("Options");
 		options_panel.RemoveAndDeleteChildren();
 
-		for (const limit_option of info["options"]) {
-			const option = $.CreatePanel("ToggleButton", options_panel, limit_option[0], {hittest: "true", text: limit_option[1]});
+		for (let limit_option of info["options"]) {
+			let option = $.CreatePanel("ToggleButton", options_panel, limit_option[0], {hittest: "true", text: limit_option[1]});
 			option.SetPanelEvent("onactivate", () => {
 				SelectOption(id, limit_option[0], options_panel);
 			});
 		}
 
-		for (const limit_option of info["options"]) {
+		for (let limit_option of info["options"]) {
 			if (limit_option[2] == true) {
 				SelectOption(id, limit_option[0], options_panel);
 			}
@@ -50,7 +50,7 @@ function Init() {
 }
 
 function PostInit() {
-	const player_info = Game.GetLocalPlayerInfo();
+	let player_info = Game.GetLocalPlayerInfo();
 	if (player_info == null) {
 		$.Schedule(0.2, PostInit);
 		return;

@@ -83,8 +83,8 @@ end
 
 function CustomHeroArena:InitFountains()
 	for _, fountain in pairs(Entities:FindAllByClassname("ent_dota_fountain")) do
-		fountain:AddNewModifier(fountain, nil, "modifier_fountain_aura_lua", {})
 		fountain:RemoveModifierByName("modifier_fountain_aura")
+		fountain:AddNewModifier(fountain, nil, "modifier_fountain_aura_lua", {})
 	end
 end
 

@@ -88,7 +88,11 @@ function CustomHeroArenaDuel:OnDuelStart()
 	DUEL_INFO["positions_before_duel"] = {}
 	for trigger_index, _ in pairs(DUEL_INFO["triggers"]) do
 		local trigger = EntIndexToHScript(trigger_index)
+		local playersMin = 1
+		local playersMax = 5
+		local plIncGold = 25000
 		local players = {}
+		--[[
 		for _, team in pairs(table.shuffle(PlayerResource:GetTeams())) do
 			local playerID = table.choice(PlayerResource:GetPlayerIDsInTeam(team))
 			if table.length(players) > 0 then
@@ -97,6 +101,29 @@ function CustomHeroArenaDuel:OnDuelStart()
 				playerID = table.find(team_networth, table.nearest(team_networth, avg_networth))
 			end
 			players[team] = {playerID}
+		end
+		]]
+		local teamPlayers = {}
+		for _, playerID in pairs(PlayerResource:GetPlayerIDs()) do
+			local team = PlayerResource:GetTeam(playerID)
+			if not teamPlayers[team] then
+				teamPlayers[team] = {}
+			end
+			table.insert(teamPlayers[team], {playerID, PlayerResource:GetNetWorth(playerID)})
+		end
+		for _, team in pairs(PlayerResource:GetTeams()) do
+			players[team] = {}
+			table.sort(teamPlayers[team], function(a, b) return a[2] > b[2] end)
+		end
+		local totalNetWorth = table.sum(table.map(teamPlayers, function(_, team) return table.sum(table.map(team, function(_, v) return v[2] end)) end))
+		local count = math.min(playersMax, math.max(playersMin, math.floor(totalNetWorth / plIncGold) + 1))
+		for i = 1, count do
+			for _, team in pairs(PlayerResource:GetTeams()) do
+				local playerID = teamPlayers[team][i] and teamPlayers[team][i][1] or nil
+				if playerID then
+					table.insert(players[team], playerID)
+				end
+			end
 		end
 		if table.length(players) >= 2 then
 			DUEL_INFO["triggers"][trigger_index] = players

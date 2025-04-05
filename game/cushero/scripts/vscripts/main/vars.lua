@@ -517,6 +517,7 @@ _G._abilitiesShop = {
 		["4"] = {
 			name = "centaur_work_horse",
 			sub = "centaur_mount",
+			scepter = true,
 		},
 		["5"] = {
 			name = "centaur_stampede",
@@ -585,7 +586,7 @@ _G._abilitiesShop = {
 		},
 		["4"] = {
 			name = "dazzle_nothl_projection",
-			sub = "dazzle_nothl_projection_end",
+		--	sub = "dazzle_nothl_projection_end",
 		},
 	},
 	npc_dota_hero_dark_seer = {
@@ -1347,6 +1348,7 @@ _G._abilitiesShop = {
 		["4"] = {
 			name = "nyx_assassin_burrow",
 			sub = "nyx_assassin_unburrow",
+			scepter = true,
 		},
 		["5"] = {
 			name = "nyx_assassin_vendetta",
